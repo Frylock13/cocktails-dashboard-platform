@@ -1,0 +1,30 @@
+.home
+  .jumbotron
+    %h1.text-center Hello
+    %p.text-center
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+    .sign-up-link.text-center
+      = link_to 'Sign Up', root_path, class: 'btn btn-success'
+
+  .recipes-blocks
+    .col-md-4
+      %h2.text-center View recipes as guest
+      %p.text-center Browse recipes
+
+      .browse.text-center
+        = link_to 'Browse', root_path, class: 'btn btn-warning text-center'
+
+    .col-md-4
+      %h2.text-center View recipes as guest
+      %p.text-center Browse recipes
+
+      .browse.text-center
+        = link_to 'Browse', root_path, class: 'btn btn-warning text-center'
+
+    .col-md-4
+      %h2.text-center View recipes as guest
+      %p.text-center Browse recipes
+
+      .browse.text-center
+        = link_to 'Browse', root_path, class: 'btn btn-warning'

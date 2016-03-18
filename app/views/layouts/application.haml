@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title Recipes
+    = csrf_meta_tags
+    = action_cable_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+  %body
+    .container-fluid
+      .header.row
+        = render 'shared/header'
+      
+      .body.row
+        = yield
+
+      .footer.row
+        = render 'shared/footer'
