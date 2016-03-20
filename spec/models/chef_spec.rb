@@ -7,8 +7,19 @@ describe Chef do
     expect(chef.valid?).to be true
   end
 
-  it 'checks invalid email' do
-    chef = Chef.create(name: Faker::Name.name, email: 'test')
+  it 'checks if format of email is invalid' do
+    chef = build(:chef, email: 'test')
     expect(chef.valid?).to eq false
+  end
+
+  it 'checks if existing email' do
+    chef1 = create(:chef, email: 'test@gmail.com')
+    chef2 = build(:chef, email: 'test@gmail.com')
+    expect(chef2.valid?).to eq false
+  end
+
+  it 'checks downcasing email during creating' do
+    chef = create(:chef, email: 'testCAPS@gmail.com')
+    expect(chef.email).to eq 'testcaps@gmail.com'
   end
 end
