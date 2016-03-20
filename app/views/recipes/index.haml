@@ -8,7 +8,7 @@
           .chef-avatar.col-md-2
             .avatar
               = image_tag recipe.chef.avatar.url(:thumb)
-            = link_to recipe.chef.name, root_path
+            = link_to recipe.chef.name, chef_path(recipe.chef.id)
 
           .info.col-md-10
             %h2
