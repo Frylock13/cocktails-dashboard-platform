@@ -4,6 +4,7 @@ class CreateRecipes < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :summary
       t.text :description
+      t.references :chef, index: true, foreign_key: true
 
       t.timestamps
     end
