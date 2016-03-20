@@ -15,6 +15,8 @@ gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 gem 'faker'
 gem 'paperclip'
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'draper'
 
 group :test do
   gem 'rspec-rails'

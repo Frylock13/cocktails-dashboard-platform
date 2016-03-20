@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :destroy]
 
   def index
-    @recipes = Recipe.includes(:chef)
+    @recipes = Recipe.includes(:chef).decorate
   end
 
   def show
@@ -30,6 +30,6 @@ class RecipesController < ApplicationController
   end
 
   def set_recipe
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:id]).decorate
   end
 end

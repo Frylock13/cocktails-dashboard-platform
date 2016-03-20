@@ -10,7 +10,7 @@
         = @recipe.description
 
       .posted-by
-        = "Posted by #{time_ago_in_words(@recipe.created_at)} ago"
+        = @recipe.posted_by
 
   .col-md-2
     %h2.text-center Author:
