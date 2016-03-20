@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 gem 'faker'
+gem 'paperclip'
 
 group :test do
   gem 'rspec-rails'
@@ -30,6 +31,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'awesome_print'
   gem 'quiet_assets'
+  gem 'bullet'
+  gem 'better_errors'
+  gem 'rack-mini-profiler'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
