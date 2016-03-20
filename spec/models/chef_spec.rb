@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Chef do
-  let(:chef) { FactoryGirl.create :chef } 
+  let(:chef) { create :chef } 
 
   it "checks validations" do
     expect(chef.valid?).to be true

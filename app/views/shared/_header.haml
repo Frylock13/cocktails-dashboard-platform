@@ -6,16 +6,15 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
+
       %a.navbar-brand{:href => "#"} Recipes
 
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav
-        %li.active
-          %a{:href => "#"}
-            Link
-            %span.sr-only (current)
         %li
-          %a{:href => "#"} Link
+          = link_to 'Recipes', recipes_path
+        %li
+          = link_to 'Chefs', root_path
         %li.dropdown
           %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
             Dropdown

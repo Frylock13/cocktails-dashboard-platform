@@ -1,0 +1,15 @@
+.recipes-index
+  %h1.text-center All recipes
+
+  .recipes-list.container
+    - @recipes.each do |recipe|
+      .recipe
+        %h2
+          = link_to recipe.name, recipe_path(recipe.id)
+        %p
+          = recipe.summary
+        %span
+          = "Posted: #{time_ago_in_words(recipe.created_at)} ago"
+
+        %div
+          = link_to 'Show', recipe_path(recipe.id), class: 'btn btn-info'
