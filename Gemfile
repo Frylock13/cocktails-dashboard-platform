@@ -17,6 +17,7 @@ gem 'faker'
 gem 'paperclip'
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper'
+gem "devise", :github => 'plataformatec/devise', :branch => 'master'
 
 group :test do
   gem 'rspec-rails'
