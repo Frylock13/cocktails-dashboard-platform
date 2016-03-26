@@ -1,7 +1,10 @@
-.recipes-index
+.recipes-index.container
   %h1.text-center All recipes
 
-  .recipes-list.container
+  .recipes-list
+    .text-center
+      = link_to 'New recipe', new_recipe_path, class: 'btn btn-primary'
+
     - @recipes.each do |recipe|
       - cache recipe do
         .recipe.col-md-12

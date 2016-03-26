@@ -16,7 +16,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'faker'
 gem 'paperclip'
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
-gem 'draper'
+gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 gem "devise", :github => 'plataformatec/devise', :branch => 'master'
 
 group :test do

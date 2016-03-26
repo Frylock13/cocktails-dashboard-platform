@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe 'Recipes' do
-  let(:chef) { create :chef }
+  let(:user) { create :user }
+  let(:chef) { create :chef, user_id: user.id }
   let(:recipe) { create(:recipe, name: 'Yogurt', chef_id: chef.id) }
 
   it 'checks title on recipes index page' do
