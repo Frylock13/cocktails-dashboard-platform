@@ -16,7 +16,7 @@ class RecipeDecorator < Draper::Decorator
 
   def check_destroy_action(user_id)
     if object.chef_id == user_id
-      h.link_to 'Delete', recipe_path(object.id), method: :delete, class: 'btn btn-danger'
+      h.link_to 'Delete', recipe_path(object.id), method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"}
     end
   end
 end

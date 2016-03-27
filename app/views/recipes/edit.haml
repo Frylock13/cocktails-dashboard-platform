@@ -1,0 +1,6 @@
+.new-recipe.container
+  %h1= "Edit recipe #{@recipe.name}"
+
+  = render 'shared/errors', object: @recipe
+
+  = render 'form'

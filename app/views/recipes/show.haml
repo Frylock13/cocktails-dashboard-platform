@@ -12,6 +12,11 @@
       .posted-by
         = @recipe.posted_by
 
+      .actions
+        - if current_user
+          = @recipe.check_edit_action(current_user.id)
+          = @recipe.check_destroy_action(current_user.id)
+
   .col-md-2.chef
     %h2.text-center Author:
     %div.avatar
