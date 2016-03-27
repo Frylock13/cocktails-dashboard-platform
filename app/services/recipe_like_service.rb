@@ -10,6 +10,7 @@ class RecipeLikeService
     if @like.valid?
       @like.save
       destroy_dislike_if_exists
+      true
     else
       false
     end
