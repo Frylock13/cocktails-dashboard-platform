@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 
-  before_action :set_recipe, only: [:show, :edit, :destroy, :update]
+  before_action :set_recipe, only: [:edit, :destroy, :update]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -8,6 +8,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipe = Recipe.find(params[:id]).decorate
   end
 
   def new
@@ -50,6 +51,6 @@ class RecipesController < ApplicationController
   end
 
   def set_recipe
-    @recipe = Recipe.find(params[:id]).decorate
+    @recipe = current_user.chef.recipes.find(params[:id]).decorate
   end
 end
