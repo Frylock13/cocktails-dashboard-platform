@@ -6,6 +6,7 @@ This app based on Udemy tutorial - The Professional Ruby on Rails Developer with
 * Service objects
 * Observers
 * Decorators
+* Paperclip
 
 ### To do
 - [ ] Convert callbacks to observers(when rails-observers gem will be updated)

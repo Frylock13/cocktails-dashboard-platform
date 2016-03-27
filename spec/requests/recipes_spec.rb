@@ -9,10 +9,4 @@ describe 'Recipes' do
     visit '/recipes'
     expect(page).to have_selector('h1', text: 'All recipes')
   end
-
-  it 'checks title on show page' do
-    visit "/recipes/#{recipe.id}"
-    expect(recipe.name).to eq 'Yogurt'
-    expect(page).to have_selector('h1', text: 'Yogurt')
-  end
 end

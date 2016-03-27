@@ -1,5 +1,5 @@
 .recipe-show.col-md-12
-  %h1.text-center= @recipe.name
+  %h1.title.text-center= @recipe.name
 
   .col-md-9.recipe
     .col-md-4.image
@@ -7,7 +7,7 @@
 
     .col-md-8
       %p.desc
-        = @recipe.description
+        = simple_format(@recipe.description)
 
       .posted-by
         = @recipe.posted_by
