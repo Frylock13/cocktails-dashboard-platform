@@ -19,4 +19,12 @@ class RecipeDecorator < Draper::Decorator
       h.link_to 'Delete', recipe_path(object.id), method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"}
     end
   end
+
+  def likes_count
+    "(#{object.likes.count})"
+  end
+
+  def dislikes_count
+    "(#{object.dislikes.count})"
+  end
 end

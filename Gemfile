@@ -17,7 +17,8 @@ gem 'faker'
 gem 'paperclip'
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'audionerd/draper', branch: 'rails5'
-gem "devise", :github => 'plataformatec/devise', :branch => 'master'
+gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
+gem 'font-awesome-rails'
 
 group :test do
   gem 'rspec-rails'

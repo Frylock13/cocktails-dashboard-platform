@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :recipes
+
+  resources :recipes do
+    post :like
+    post :dislike
+  end
+
   resources :chefs
 
   root 'pages#home'

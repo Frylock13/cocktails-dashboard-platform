@@ -14,8 +14,20 @@
 
       .actions
         - if current_user
-          = @recipe.check_edit_action(current_user)
-          = @recipe.check_destroy_action(current_user)
+          .edit
+            = @recipe.check_edit_action(current_user)
+            = @recipe.check_destroy_action(current_user)
+
+        .votes
+          .like
+            = link_to recipe_like_path(recipe_id: @recipe.id), method: :post do
+              = fa_icon 'thumbs-o-up 2x'
+            = @recipe.likes_count
+
+          .dislike
+            = link_to recipe_dislike_path(recipe_id: @recipe.id), method: :post do
+              = fa_icon 'thumbs-o-down 2x'
+            = @recipe.dislikes_count
 
   .col-md-2.chef
     %h2.text-center Author:

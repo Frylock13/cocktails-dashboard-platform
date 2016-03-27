@@ -44,6 +44,30 @@ class RecipesController < ApplicationController
     flash[:success] = 'You have deleted recipe'
   end
 
+  def like
+    like = RecipeLikeService.new(params[:recipe_id], current_user.chef.id)
+
+    if like.call
+      redirect_to :back
+      flash[:success] = 'You have liked this recipe'
+    else
+      redirect_to :back
+      flash[:danger] = 'You already have liked this recipe'
+    end
+  end
+
+  def dislike
+    like = RecipeDislikeService.new(params[:recipe_id], current_user.chef.id)
+
+    if like.call
+      redirect_to :back
+      flash[:success] = 'You have disliked this recipe'
+    else
+      redirect_to :back
+      flash[:danger] = 'You already have disliked this recipe'
+    end
+  end
+
   private
 
   def recipe_params

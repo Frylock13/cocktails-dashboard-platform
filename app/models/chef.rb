@@ -4,5 +4,8 @@ class Chef < ApplicationRecord
   validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   has_many :recipes, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :dislikes, dependent: :destroy
+  
   belongs_to :user
 end

@@ -8,5 +8,8 @@ class Recipe < ApplicationRecord
   validates :summary, presence: true, length: { minimum: 30, maximum: 300 }
   validates :description, presence: true, length: { minimum: 300 }
 
+  has_many :likes
+  has_many :dislikes
+  
   belongs_to :chef
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326234715) do
+ActiveRecord::Schema.define(version: 20160327210639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,26 @@ ActiveRecord::Schema.define(version: 20160326234715) do
   end
 
   add_index "chefs", ["user_id"], name: "index_chefs_on_user_id", using: :btree
+
+  create_table "dislikes", force: :cascade do |t|
+    t.integer  "chef_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "dislikes", ["chef_id"], name: "index_dislikes_on_chef_id", using: :btree
+  add_index "dislikes", ["recipe_id"], name: "index_dislikes_on_recipe_id", using: :btree
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "chef_id"
+    t.integer  "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "likes", ["chef_id"], name: "index_likes_on_chef_id", using: :btree
+  add_index "likes", ["recipe_id"], name: "index_likes_on_recipe_id", using: :btree
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
@@ -62,4 +82,8 @@ ActiveRecord::Schema.define(version: 20160326234715) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "dislikes", "chefs"
+  add_foreign_key "dislikes", "recipes"
+  add_foreign_key "likes", "chefs"
+  add_foreign_key "likes", "recipes"
 end
