@@ -10,6 +10,11 @@
     .container-fluid
       .header.row
         = render 'shared/header'
+        
+        - flash.each do |type, message|
+          %h3
+            %div{:class => "alert #{flash_class type}"}
+              = message
       
       .body.row
         = yield

@@ -1,8 +1,8 @@
 .recipe-show.col-md-12
   %h1.text-center= @recipe.name
 
-  .col-md-9
-    .col-md-4.avatar
+  .col-md-9.recipe
+    .col-md-4.image
       = image_tag @recipe.image.url(:large)
 
     .col-md-8
@@ -12,9 +12,9 @@
       .posted-by
         = @recipe.posted_by
 
-  .col-md-2
+  .col-md-2.chef
     %h2.text-center Author:
-    %div
+    %div.avatar
       = image_tag @recipe.chef.avatar.url(:medium), class: 'center'
 
       .text-center

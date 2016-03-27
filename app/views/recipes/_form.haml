@@ -1,0 +1,21 @@
+.form.row
+  .col-md-6
+    = form_for @recipe do |f|
+      .form-group
+        = f.label :name,  'Title'
+        = f.text_field :name, class: 'form-control'
+
+      .form-group
+        = f.label :summary, 'Summary'
+        = f.text_area :summary, class: 'form-control'
+
+      .form-group 
+        = f.label :description
+        = f.text_area :description, class: 'form-control'
+
+      .form-group
+        = f.label :image
+        = f.file_field :image
+
+      .actions
+        = f.submit(@recipe.new_record? ? 'Create' : 'Edit recipe', class: 'btn btn-success')

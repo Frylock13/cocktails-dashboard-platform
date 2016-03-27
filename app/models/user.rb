@@ -10,13 +10,13 @@ class User < ApplicationRecord
                     uniqueness: true,
                     format: { with: VALID_EMAIL_REGEX }
 
-  has_one :chef
+  has_one :chef, dependent: :destroy
 
   after_create :create_chef_profile
 
   private
 
   def create_chef_profile
-    Chef.create(user_id: self.id)
+    Chef.create(user_id: self.id, name: "Chef №#{self.id}")
   end
 end

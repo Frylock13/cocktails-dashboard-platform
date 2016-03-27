@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
 
   before_action :set_recipe, only: [:show, :edit, :destroy]
+  before_action :authenticate_user!, except: :index
 
   def index
     @recipes = Recipe.includes(:chef).decorate
@@ -10,11 +11,18 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.chef.recipes.new
   end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.chef.recipes.new(recipe_params)
+
+    if @recipe.save
+      redirect_to recipes_path
+      flash[:success] = 'Recipe created'
+    else
+      render :new
+    end
   end
 
   def edit
@@ -26,7 +34,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :summary, :description)
+    params.require(:recipe).permit(:name, :summary, :description, :image)
   end
 
   def set_recipe
