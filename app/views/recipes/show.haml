@@ -14,8 +14,8 @@
 
       .actions
         - if current_user
-          = @recipe.check_edit_action(current_user.id)
-          = @recipe.check_destroy_action(current_user.id)
+          = @recipe.check_edit_action(current_user)
+          = @recipe.check_destroy_action(current_user)
 
   .col-md-2.chef
     %h2.text-center Author:

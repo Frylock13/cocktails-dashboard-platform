@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Chef do
   let(:user) { create :user } 
-  let(:chef) { create :chef, user_id: user.id } 
+  let(:chef) { user.chef } 
 
   it "checks validations" do
     expect(chef.valid?).to be true

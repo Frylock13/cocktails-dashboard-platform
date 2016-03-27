@@ -8,14 +8,14 @@ class RecipeDecorator < Draper::Decorator
     "Posted by: #{time_ago_in_words(object.created_at)} ago"
   end
 
-  def check_edit_action(user_id)
-    if object.chef_id == user_id
+  def check_edit_action(user)
+    if object.chef_id == user.chef.id
       h.link_to 'Edit', edit_recipe_path(object.id), class: 'btn btn-warning'
     end
   end
 
-  def check_destroy_action(user_id)
-    if object.chef_id == user_id
+  def check_destroy_action(user)
+    if object.chef_id == user.chef.id
       h.link_to 'Delete', recipe_path(object.id), method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"}
     end
   end
