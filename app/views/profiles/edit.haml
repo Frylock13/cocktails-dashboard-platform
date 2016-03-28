@@ -1,5 +1,7 @@
 .container
   .profile-show.col-md-12
+    = render 'shared/errors', object: @profile
+
     %h1.text-center Edit profile
 
     .form
@@ -9,6 +11,6 @@
           = f.file_field :avatar, class: 'form-control'        
         .form-group
           = f.label :name
-          = f.text_field :name, class: 'form-control'
+          = f.text_field :name, class: 'form-control', required: true
         .form-group
-          = f.submit 'Save', class: 'btn btn-success'
+          = f.submit 'Save', class: 'btn btn-success', id: 'save'
