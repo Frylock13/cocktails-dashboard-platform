@@ -16,13 +16,20 @@
     .avatar img
       max-width: 250px
 
-  .actions
-    .edit, .votes
+.actions
+  .edit, .votes
+    display: inline-block
+
+  .votes
+    float: right
+
+    a:hover
+      text-decoration: none
+
+    .like, .dislike
       display: inline-block
+      margin-right: 20px
 
-    .votes
-      float: right
-
-      .like, .dislike
-        display: inline-block
-        margin-right: 20px
+    .like-count, .dislike-count
+      display: inline-block
+      margin-top: 5px

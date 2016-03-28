@@ -7,7 +7,7 @@
 
     - @recipes.each do |recipe|
       - cache recipe do
-        .recipe.col-md-12
+        .recipe.col-md-12.jumbotron
           .chef-avatar.col-md-2
             .avatar
               = image_tag recipe.chef.avatar.url(:thumb)
@@ -18,9 +18,21 @@
             %p= recipe.summary
             %span= recipe.posted_by
 
-            %div
+            .actions
               = link_to 'Show', recipe_path(recipe.id), class: 'btn btn-info'
               
               - if current_user
+
                 = recipe.check_edit_action(current_user)
                 = recipe.check_destroy_action(current_user)
+
+              .votes
+                .like
+                  = link_to recipe_like_path(recipe_id: recipe.id), id: 'like', method: :post do
+                    = fa_icon 'thumbs-o-up'
+                  .like-count= recipe.likes_count
+
+                .dislike
+                  = link_to recipe_dislike_path(recipe_id: recipe.id), id: 'dislike', method: :post do
+                    = fa_icon 'thumbs-o-down'
+                  .dislike-count= recipe.dislikes_count
