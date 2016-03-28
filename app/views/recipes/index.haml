@@ -16,23 +16,25 @@
           .info.col-md-10
             %h2= link_to recipe.name, recipe_path(recipe.id)
             %p= recipe.summary
-            %span= recipe.posted_by
+            %span= recipe.decorate.posted_by
 
             .actions
               = link_to 'Show', recipe_path(recipe.id), class: 'btn btn-info'
               
               - if current_user
 
-                = recipe.check_edit_action(current_user)
-                = recipe.check_destroy_action(current_user)
+                = recipe.decorate.check_edit_action(current_user)
+                = recipe.decorate.check_destroy_action(current_user)
 
               .votes
                 .like
                   = link_to recipe_like_path(recipe_id: recipe.id), id: 'like', method: :post do
                     = fa_icon 'thumbs-o-up'
-                  .like-count= recipe.likes_count
+                  .like-count= recipe.decorate.likes_count
 
                 .dislike
                   = link_to recipe_dislike_path(recipe_id: recipe.id), id: 'dislike', method: :post do
                     = fa_icon 'thumbs-o-down'
-                  .dislike-count= recipe.dislikes_count
+                  .dislike-count= recipe.decorate.dislikes_count
+
+    = paginate @recipes, theme: 'twitter-bootstrap-3'

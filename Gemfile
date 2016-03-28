@@ -19,6 +19,8 @@ gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
 gem 'font-awesome-rails'
+gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+gem 'bootstrap-kaminari-views'
 
 group :test do
   gem 'rspec-rails'

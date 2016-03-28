@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/amatsuda/kaminari.git
+  revision: 3974ae5f39ce31bfca28d17eccd8daf3ca263aa3
+  branch: master
+  specs:
+    kaminari (1.0.0.alpha)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
+
+GIT
   remote: git://github.com/audionerd/draper.git
   revision: e816e0e5876b76c648c0928f1c3f2aa2c7a3d1f2
   branch: rails5
@@ -81,6 +90,9 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -290,6 +302,7 @@ DEPENDENCIES
   activemodel-serializers-xml!
   awesome_print
   better_errors
+  bootstrap-kaminari-views
   bootstrap-sass (~> 3.3.6)
   bootswatch-rails
   bullet
@@ -305,6 +318,7 @@ DEPENDENCIES
   haml-rails (~> 0.9)
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari!
   listen (~> 3.0.5)
   paperclip
   pg
