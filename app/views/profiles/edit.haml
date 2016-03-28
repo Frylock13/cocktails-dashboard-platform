@@ -1,0 +1,14 @@
+.container
+  .profile-show.col-md-12
+    %h1.text-center Edit profile
+
+    .form
+      = form_for @profile, controller: 'profile', action: 'update', method: :patch do |f|
+        .form-group
+          = f.label :avatar
+          = f.file_field :avatar, class: 'form-control'        
+        .form-group
+          = f.label :name
+          = f.text_field :name, class: 'form-control'
+        .form-group
+          = f.submit 'Save', class: 'btn btn-success'

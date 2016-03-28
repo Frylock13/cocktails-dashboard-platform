@@ -1,0 +1,26 @@
+.container
+  .profile-show.col-md-12
+    %h1.text-center Profile
+    .actions
+      = link_to 'Edit profile', edit_profile_path, class: 'btn btn-warning'
+
+
+    .col-md-4
+      = image_tag @profile.avatar.url(:medium)
+
+    .col-md-8
+      .name
+        %strong Name:
+        %p= @profile.name
+
+      .recipes
+        %strong Recipes:
+        %p= @recipes_count
+
+      .likes
+        %strong Likes:
+        %p= @likes
+
+      .dislikes
+        %strong Dislikes:
+        %p= @dislikes

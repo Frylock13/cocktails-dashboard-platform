@@ -2,8 +2,7 @@
   %h1.text-center All recipes
 
   .recipes-list
-    .text-center
-      = link_to 'New recipe', new_recipe_path, class: 'btn btn-primary'
+    = link_to 'New recipe', new_recipe_path, class: 'btn btn-primary'
 
     - @recipes.each do |recipe|
       - cache recipe do
@@ -37,4 +36,4 @@
                     = fa_icon 'thumbs-o-down'
                   .dislike-count= recipe.decorate.dislikes_count
 
-    = paginate @recipes, theme: 'twitter-bootstrap-3'
+  = paginate @recipes, theme: 'twitter-bootstrap-3'
