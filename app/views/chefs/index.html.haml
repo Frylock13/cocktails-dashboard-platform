@@ -5,7 +5,7 @@
     - @chefs.each do |chef|
       .chef.row
         .col-md-2
-          = image_tag chef.avatar.url(:thumb)
+          = link_to image_tag(chef.avatar.url(:thumb)), chef_path(chef.id)
 
         .col-md-8
           .panel.panel-default
@@ -20,16 +20,16 @@
                 %td
                   %strong Recipes:
                 %td
-                  = chef.recipes.count
+                  = chef.recipes_count
               %tr
                 %td
                   %strong Likes:
                 %td
-                  2
+                  = chef.likes_count
               %tr
                 %td
                   %strong Dislikes:
                 %td
-                  2
+                  = chef.dislikes_count
 
   = paginate @chefs, theme: 'twitter-bootstrap-3'
