@@ -1,7 +1,7 @@
 class ChefsController < ApplicationController
 
   def index
-    @chefs = Chef.page(params[:page])
+    @chefs = Chef.all.page(params[:page])
   end
 
   def show
