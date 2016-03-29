@@ -1,0 +1,28 @@
+.row
+  .col-md-4
+    = image_tag @profile.avatar.url(:medium)
+
+  .col-md-8
+    .panel.panel-default
+      .panel-heading Info
+      %table.table
+        %tr
+          %td
+            %strong Name:
+          %td
+            = @profile.name
+        %tr
+          %td
+            %strong Recipes:
+          %td
+            = @recipes_count
+        %tr
+          %td
+            %strong Likes:
+          %td
+            = @likes
+        %tr
+          %td
+            %strong Dislikes:
+          %td
+            = @dislikes

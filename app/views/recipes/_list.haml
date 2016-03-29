@@ -1,0 +1,31 @@
+- @recipes.each do |recipe|
+  - cache recipe do
+    .recipe.col-md-12.jumbotron
+      .chef-avatar.col-md-2
+        .avatar
+          = image_tag recipe.chef.avatar.url(:thumb)
+        = link_to recipe.chef.name, chef_path(recipe.chef.id)
+
+      .info.col-md-10
+        %h2= link_to recipe.name, recipe_path(recipe.id)
+        %p= recipe.summary
+        %span= recipe.decorate.posted_by
+
+        .actions
+          = link_to 'Show', recipe_path(recipe.id), class: 'btn btn-info'
+          
+          - if current_user
+
+            = recipe.decorate.check_edit_action(current_user)
+            = recipe.decorate.check_destroy_action(current_user)
+
+          .votes
+            .like
+              = link_to recipe_like_path(recipe_id: recipe.id), id: 'like', method: :post do
+                = fa_icon 'thumbs-o-up'
+              .like-count= recipe.decorate.likes_count
+
+            .dislike
+              = link_to recipe_dislike_path(recipe_id: recipe.id), id: 'dislike', method: :post do
+                = fa_icon 'thumbs-o-down'
+              .dislike-count= recipe.decorate.dislikes_count

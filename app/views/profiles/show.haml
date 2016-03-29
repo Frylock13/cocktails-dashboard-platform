@@ -4,23 +4,12 @@
     .actions
       = link_to 'Edit profile', edit_profile_path, class: 'btn btn-warning'
 
+    = render 'chefs/profile'
 
-    .col-md-4
-      = image_tag @profile.avatar.url(:medium)
+    %hr/
 
-    .col-md-8
-      .name
-        %strong Name:
-        %p= @profile.name
+    %h1.text-center Recipes
 
-      .recipes
-        %strong Recipes:
-        %p= @recipes_count
-
-      .likes
-        %strong Likes:
-        %p= @likes
-
-      .dislikes
-        %strong Dislikes:
-        %p= @dislikes
+    = render 'recipes/list'
+    
+    = paginate @recipes, theme: 'twitter-bootstrap-3'

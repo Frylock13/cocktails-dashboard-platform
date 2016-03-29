@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   before_action :set_profile
 
   def show
-    @recipes_count = @profile.recipes.count
+    @recipes = current_user.chef.recipes.page(params[:page])
     @likes = @profile.likes.count
     @dislikes = @profile.dislikes.count
   end

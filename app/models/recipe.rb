@@ -12,4 +12,6 @@ class Recipe < ApplicationRecord
   has_many :dislikes
   
   belongs_to :chef
+
+  paginates_per 5
 end
