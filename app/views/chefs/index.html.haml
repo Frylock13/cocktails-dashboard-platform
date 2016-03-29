@@ -1,2 +1,35 @@
-%h1 Chef#index
-%p Find me in app/views/chef/index.html.haml
+.container
+  .chefs-index
+    %h1.text-center Chefs
+
+    - @chefs.each do |chef|
+      .chef.row
+        .col-md-2
+          = image_tag chef.avatar.url(:thumb)
+
+        .col-md-8
+          .panel.panel-default
+            .panel-heading Info
+            %table.table
+              %tr
+                %td
+                  %strong Name:
+                %td
+                  = chef.name
+              %tr
+                %td
+                  %strong Recipes:
+                %td
+                  = chef.recipes.count
+              %tr
+                %td
+                  %strong Likes:
+                %td
+                  2
+              %tr
+                %td
+                  %strong Dislikes:
+                %td
+                  2
+
+  = paginate @chefs, theme: 'twitter-bootstrap-3'

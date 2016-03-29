@@ -9,4 +9,6 @@ class Chef < ApplicationRecord
   has_many :dislikes, dependent: :destroy
   
   belongs_to :user
+
+  paginates_per 5
 end
