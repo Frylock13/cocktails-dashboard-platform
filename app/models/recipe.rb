@@ -11,7 +11,7 @@ class Recipe < ApplicationRecord
   has_many :likes
   has_many :dislikes
   
-  belongs_to :chef
+  belongs_to :chef, counter_cache: true
 
   paginates_per 5
 end

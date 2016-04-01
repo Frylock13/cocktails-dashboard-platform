@@ -23,9 +23,9 @@
             .like
               = link_to recipe_like_path(recipe_id: recipe.id), id: 'like', method: :post do
                 = fa_icon 'thumbs-o-up'
-              .like-count= recipe.decorate.likes_count
+              .like-count= recipe.likes_count
 
             .dislike
               = link_to recipe_dislike_path(recipe_id: recipe.id), id: 'dislike', method: :post do
                 = fa_icon 'thumbs-o-down'
-              .dislike-count= recipe.decorate.dislikes_count
+              .dislike-count= recipe.dislikes_count

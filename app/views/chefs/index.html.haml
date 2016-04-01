@@ -21,16 +21,16 @@
                   %td
                     %strong Recipes:
                   %td
-                    = chef.recipes.count
+                    = chef.recipes_count
                 %tr
                   %td
                     %strong Likes:
                   %td
-                    = chef.likes.count
+                    = chef.likes_count
                 %tr
                   %td
                     %strong Dislikes:
                   %td
-                    = chef.dislikes.count
+                    = chef.dislikes_count
 
   = paginate @chefs, theme: 'twitter-bootstrap-3'
