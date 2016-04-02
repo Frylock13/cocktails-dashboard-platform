@@ -5,8 +5,6 @@ class ProfilesController < ApplicationController
 
   def show
     @recipes = current_user.chef.recipes.page(params[:page])
-    @likes = @profile.likes.count
-    @dislikes = @profile.dislikes.count
   end
 
   def edit

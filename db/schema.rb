@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160401023410) do
+ActiveRecord::Schema.define(version: 20160401233256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(version: 20160401023410) do
   add_index "dislikes", ["chef_id"], name: "index_dislikes_on_chef_id", using: :btree
   add_index "dislikes", ["recipe_id"], name: "index_dislikes_on_recipe_id", using: :btree
 
+  create_table "ingredients", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer  "chef_id"
     t.integer  "recipe_id"
@@ -51,6 +55,22 @@ ActiveRecord::Schema.define(version: 20160401023410) do
 
   add_index "likes", ["chef_id"], name: "index_likes_on_chef_id", using: :btree
   add_index "likes", ["recipe_id"], name: "index_likes_on_recipe_id", using: :btree
+
+  create_table "recipe_ingredients", force: :cascade do |t|
+    t.integer "recipe_id"
+    t.integer "ingredient_id"
+  end
+
+  add_index "recipe_ingredients", ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id", using: :btree
+  add_index "recipe_ingredients", ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id", using: :btree
+
+  create_table "recipe_styles", force: :cascade do |t|
+    t.integer "style_id"
+    t.integer "recipe_id"
+  end
+
+  add_index "recipe_styles", ["recipe_id"], name: "index_recipe_styles_on_recipe_id", using: :btree
+  add_index "recipe_styles", ["style_id"], name: "index_recipe_styles_on_style_id", using: :btree
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
@@ -68,6 +88,10 @@ ActiveRecord::Schema.define(version: 20160401023410) do
   end
 
   add_index "recipes", ["chef_id"], name: "index_recipes_on_chef_id", using: :btree
+
+  create_table "styles", force: :cascade do |t|
+    t.string "name"
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -91,4 +115,8 @@ ActiveRecord::Schema.define(version: 20160401023410) do
   add_foreign_key "dislikes", "recipes"
   add_foreign_key "likes", "chefs"
   add_foreign_key "likes", "recipes"
+  add_foreign_key "recipe_ingredients", "ingredients"
+  add_foreign_key "recipe_ingredients", "recipes"
+  add_foreign_key "recipe_styles", "recipes"
+  add_foreign_key "recipe_styles", "styles"
 end
