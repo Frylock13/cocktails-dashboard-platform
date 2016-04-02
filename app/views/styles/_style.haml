@@ -1,0 +1,5 @@
+.col-md-3
+  .name.text-center
+    %h2= style.name
+
+  = link_to image_tag(style.flag.url(:thumb), class: 'center'), style_path(style.slug)

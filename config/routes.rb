@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   end
 
   resources :chefs, only: [:index, :show, :update]
+  resources :styles, only: [:index, :show]
+  resources :ingredients, only: [:index, :show]
   resource :profile, only: [:show, :edit]
 
   root 'pages#home'

@@ -21,6 +21,7 @@ gem 'devise', :github => 'plataformatec/devise', :branch => 'master'
 gem 'font-awesome-rails'
 gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
 gem 'bootstrap-kaminari-views'
+gem 'friendly_id', '~> 5.1.0'
 
 group :test do
   gem 'rspec-rails'

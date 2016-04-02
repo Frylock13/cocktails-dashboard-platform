@@ -1,7 +1,10 @@
 class Ingredient < ApplicationRecord
 
-  validates :name, presence: true, length: { minimum: 5, maximum: 50 }
+  extend FriendlyId
+  friendly_id :name, use: :slugged
   
-  has_many :recipe_ingredients
+  validates :name, presence: true, uniqueness: true, length: { minimum: 5, maximum: 50 }
+  
+  has_many :recipe_ingredients, dependent: :destroy
   has_many :recipes, through: :recipe_ingredients
 end
