@@ -1,2 +1,4 @@
-%h1 Ingredients#show
-%p Find me in app/views/ingredients/show.html.haml
+.styles-show.container
+  %h1.text-center= @ingredient.name
+
+  = render 'recipes/list'

@@ -11,4 +11,5 @@ Chef.destroy_all
 end
 
 Style.create(name: 'American', flag: File.new("#{Rails.root}/db/seeds/flag-usa.png"))
-Style.create(name: 'Deutch',   flag: File.new("#{Rails.root}/db/seeds/flag-deutch.png"))
+Style.create(name: 'Deutch', flag: File.new("#{Rails.root}/db/seeds/flag-deutch.png"))
+Ingredient.create(name: 'Banana', image: File.new("#{Rails.root}/db/seeds/banana.png"))
