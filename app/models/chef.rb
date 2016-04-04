@@ -7,6 +7,7 @@ class Chef < ApplicationRecord
   has_many :recipes, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :dislikes, dependent: :destroy
+  has_many :reviews
   
   belongs_to :user
 

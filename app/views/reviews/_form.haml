@@ -1,0 +1,9 @@
+.form.row
+  .col-md-6
+    = form_for @review, url: recipe_reviews_path(recipe_id: params[:recipe_id]) do |f|
+      .form-group
+        = f.label :text,  'Text'
+        = f.text_area :text, class: 'form-control'
+
+      .actions
+        = f.submit(@review.new_record? ? 'Create' : 'Edit review', class: 'btn btn-success')
