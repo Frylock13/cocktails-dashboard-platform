@@ -14,6 +14,16 @@
         = f.text_area :description, class: 'form-control'
 
       .form-group
+        %strong Styles:
+        %br/
+        = f.collection_check_boxes :style_ids, Style.all, :id, :name
+
+      .form-group
+        %strong Ingredients:
+        %br/
+        = f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name
+
+      .form-group
         = f.label :image
         = f.file_field :image
 

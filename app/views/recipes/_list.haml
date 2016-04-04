@@ -11,8 +11,8 @@
       %p= recipe.summary
       %span= recipe.decorate.posted_by
 
-      = render 'styles', recipe: recipe
-      = render 'ingredients', recipe: recipe
+      = render 'recipes/styles', recipe: recipe
+      = render 'recipes/ingredients', recipe: recipe
 
       .actions
         = link_to 'Show', recipe_path(recipe.id), class: 'btn btn-info'

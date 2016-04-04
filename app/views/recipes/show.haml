@@ -9,6 +9,9 @@
       %p.desc
         = simple_format(@recipe.description)
 
+      = render 'styles', recipe: @recipe
+      = render 'ingredients', recipe: @recipe
+
       .posted-by
         = @recipe.posted_by
 
