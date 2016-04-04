@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    if @review.update(review_params)
+    if @review.update(text: params[:review][:text])
       redirect_to recipe_path(params[:recipe_id])
       flash[:success] = 'Review has updated'
     else
@@ -43,7 +43,9 @@ class ReviewsController < ApplicationController
   private
 
   def set_review
-    @review = current_user.chef.reviews.find(params[:id])
+    if current_user.admin? || owner?(params[:id])
+      @review = Review.find(params[:id])
+    end
   end
 
   def set_recipe
@@ -52,5 +54,9 @@ class ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:text).merge(chef_id: current_user.chef.id)
+  end
+
+  def owner?(recipe_id)
+    current_user.chef.recipes.ids.include?(recipe_id)
   end
 end
