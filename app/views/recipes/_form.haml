@@ -16,12 +16,14 @@
       .form-group
         %strong Styles:
         %br/
-        = f.collection_check_boxes :style_ids, Style.all, :id, :name
+        = f.collection_check_boxes :style_ids, Style.all, :id, :name do |si|
+          = si.label(class: 'checkbox-inline') {si.check_box(class: 'checkbox') + si.text}
 
       .form-group
         %strong Ingredients:
         %br/
-        = f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name
+        = f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |ii|
+          = ii.label(class: 'checkbox-inline') {ii.check_box(class: 'checkbox') + ii.text}
 
       .form-group
         = f.label :image

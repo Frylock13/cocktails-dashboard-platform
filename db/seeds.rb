@@ -2,6 +2,8 @@
 Recipe.destroy_all
 User.destroy_all
 Chef.destroy_all
+Style.destroy_all
+Ingredient.destroy_all
 
 # Generate fake data
 5.times do 

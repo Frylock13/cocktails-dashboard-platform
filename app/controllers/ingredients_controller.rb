@@ -6,6 +6,6 @@ class IngredientsController < ApplicationController
 
   def show
     @ingredient = Ingredient.friendly.find(params[:id])
-    @recipes = @ingredient.recipes
+    @recipes = @ingredient.recipes.includes(:chef)
   end
 end
