@@ -1,0 +1,6 @@
+.edit-review.container
+  %h1= "Edit review for #{@recipe.name}"
+
+  = render 'shared/errors', object: @review
+
+  = render 'form'

@@ -34,6 +34,11 @@
               = fa_icon 'thumbs-o-down 2x'
             .dislike-count= @recipe.dislikes_count
 
+      - if @recipe.reviews.present?
+        .reviews.row
+          %h2.text-center Reviews
+          = render @reviews
+
   .col-md-2.chef
     %h2.text-center Author:
     %div.avatar

@@ -1,5 +1,5 @@
 .new-review.container
-  %h1 New review
+  %h1= "New review for #{@recipe.name}"
 
   = render 'shared/errors', object: @review
 
