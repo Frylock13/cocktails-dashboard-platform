@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
 
-  before_action :set_recipe, only: [:edit, :destroy, :update]
+  before_action :set_editable_recipe, only: [:edit, :destroy, :update]
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
@@ -74,7 +74,13 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:name, :summary, :description, :image, style_ids: [], ingredient_ids: [])
   end
 
-  def set_recipe
-    @recipe = current_user.chef.recipes.find(params[:id]).decorate
+  def set_editable_recipe
+    if current_user.admin? || owner?(params[:id])
+      @recipe = Recipe.find(params[:id]).decorate
+    end
+  end
+
+  def owner?(recipe_id)
+    current_user.chef.recipes.ids.include?(recipe_id)
   end
 end

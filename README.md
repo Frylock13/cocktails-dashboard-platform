@@ -9,4 +9,5 @@ This app based on Udemy tutorial - The Professional Ruby on Rails Developer with
 * Paperclip
 
 ### To do
-- [ ] Convert callbacks to observers(when rails-observers gem will be updated)
+- [ ] Convert callbacks to observers
+- [ ] Add activeadmin

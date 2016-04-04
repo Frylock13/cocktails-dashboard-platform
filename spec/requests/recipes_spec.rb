@@ -21,9 +21,17 @@ describe 'Recipes' do
 
   context 'privacy' do
     let(:user2) { create :user, email: 'another@gmail.com', password: 'password' }
+    let(:admin) { create :user, email: 'admin@gmail.com', password: 'top_secret', admin: true }
 
-    it 'checks avaliable actions for owner' do
+    it 'checks manage actions for owner' do
       login(user.email, 'password')
+      visit "/recipes/#{recipe.id}"
+      expect(page).to have_content 'Edit'
+      expect(page).to have_content 'Delete'
+    end
+
+    it 'checks manage actions for admin' do
+      login(admin.email, 'top_secret')
       visit "/recipes/#{recipe.id}"
       expect(page).to have_content 'Edit'
       expect(page).to have_content 'Delete'
@@ -31,6 +39,12 @@ describe 'Recipes' do
 
     it 'checks hidden actions for another user(not owner)' do
       login(user2.email, 'password')
+      visit "/recipes/#{recipe.id}"
+      expect(page).not_to have_content 'Edit'
+      expect(page).not_to have_content 'Delete'
+    end
+
+    it 'checks hidden actions for guest' do
       visit "/recipes/#{recipe.id}"
       expect(page).not_to have_content 'Edit'
       expect(page).not_to have_content 'Delete'
