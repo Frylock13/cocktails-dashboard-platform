@@ -13,6 +13,6 @@ class ProfilesController < ApplicationController
   private
 
   def set_profile
-    @profile = current_user.chef
+    @chef = current_user.chef
   end
 end

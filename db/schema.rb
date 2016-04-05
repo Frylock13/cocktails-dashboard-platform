@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404024528) do
+ActiveRecord::Schema.define(version: 20160405205152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160404024528) do
     t.integer  "likes_count",         default: 0
     t.integer  "dislikes_count",      default: 0
     t.integer  "recipes_count",       default: 0
+    t.integer  "reviews_count",       default: 0
   end
 
   add_index "chefs", ["user_id"], name: "index_chefs_on_user_id", using: :btree

@@ -4,12 +4,4 @@
     .actions
       = link_to 'Edit profile', edit_profile_path, class: 'btn btn-warning'
 
-    = render 'chefs/profile'
-
-    %hr/
-
-    %h1.text-center Recipes
-
-    = render 'recipes/list'
-    
-    = paginate @recipes, theme: 'twitter-bootstrap-3'
+    = render @chef

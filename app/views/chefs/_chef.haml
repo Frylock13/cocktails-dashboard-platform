@@ -1,0 +1,41 @@
+.row
+  .col-md-4
+    = image_tag @chef.avatar.url(:medium)
+
+  .col-md-8
+    .panel.panel-default
+      .panel-heading Info
+      %table.table
+        %tr
+          %td
+            %strong Name:
+          %td
+            = @chef.name
+        %tr
+          %td
+            %strong Recipes:
+          %td
+            = @chef.recipes_count
+        %tr
+          %td
+            %strong Reviews:
+          %td
+            = @chef.reviews_count
+        %tr
+          %td
+            %strong Likes:
+          %td
+            = @chef.likes_count
+        %tr
+          %td
+            %strong Dislikes:
+          %td
+            = @chef.dislikes_count
+
+  %hr/
+
+  %h1.text-center Recipes
+
+  = render 'recipes/list'
+  
+  = paginate @recipes, theme: 'twitter-bootstrap-3'
