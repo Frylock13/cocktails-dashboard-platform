@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :recipes do
     post :like
     post :dislike
-    resources :reviews, except: [:index, :show]
+    resources :reviews, except: :show
   end
 
   resources :chefs, only: [:index, :show, :update]

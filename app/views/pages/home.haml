@@ -7,24 +7,36 @@
     .sign-up-link.text-center
       = link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success'
 
-  .recipes-blocks
+  .blocks
     .col-md-4
-      %h2.text-center View recipes as guest
-      %p.text-center Browse recipes
+      %h2.text-center Last added recipes
+
+      .recipes.text-center
+        - @recipes.each do |recipe|
+          .text-center
+            %h5= link_to recipe.name, recipe_path(recipe.id)
 
       .browse.text-center
-        = link_to 'Browse', root_path, class: 'btn btn-warning text-center'
+        = link_to 'Browse all recipes', recipes_path, class: 'btn btn-info text-center'
 
     .col-md-4
-      %h2.text-center View recipes as guest
-      %p.text-center Browse recipes
+      %h2.text-center Last registered chefs
+
+      .chefs-text-center
+        - @chefs.each do |chef|
+          .text-center
+            %h5= link_to chef.name, chef_path(chef.id)
 
       .browse.text-center
-        = link_to 'Browse', root_path, class: 'btn btn-warning text-center'
+        = link_to 'Browse all chefs', chefs_path, class: 'btn btn-info text-center'
 
     .col-md-4
-      %h2.text-center View recipes as guest
-      %p.text-center Browse recipes
+      %h2.text-center Last added reviews
+
+      .reviews-text-center
+        - @reviews.each do |review|
+          .text-center
+            %h5= link_to review.recipe.name, recipes_path(review.recipe.id)
 
       .browse.text-center
-        = link_to 'Browse', root_path, class: 'btn btn-warning'
+        = link_to 'Browse all reviews', recipes_path, class: 'btn btn-info text-center'
