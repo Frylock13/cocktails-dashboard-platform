@@ -13,8 +13,9 @@
 
       .recipes.text-center
         - @recipes.each do |recipe|
-          .text-center
-            %h5= link_to recipe.name, recipe_path(recipe.id)
+          - cache recipe do
+            .text-center
+              %h5= link_to recipe.name, recipe_path(recipe.id)
 
       .browse.text-center
         = link_to 'Browse all recipes', recipes_path, class: 'btn btn-info text-center'
@@ -24,8 +25,9 @@
 
       .chefs-text-center
         - @chefs.each do |chef|
-          .text-center
-            %h5= link_to chef.name, chef_path(chef.id)
+          - cache chef do
+            .text-center
+              %h5= link_to chef.name, chef_path(chef.id)
 
       .browse.text-center
         = link_to 'Browse all chefs', chefs_path, class: 'btn btn-info text-center'
@@ -35,8 +37,9 @@
 
       .reviews-text-center
         - @reviews.each do |review|
-          .text-center
-            %h5= link_to review.recipe.name, recipes_path(review.recipe.id)
+          - cache review do
+            .text-center
+              %h5= link_to review.recipe.name, recipes_path(review.recipe.id)
 
       .browse.text-center
         = link_to 'Browse all reviews', recipes_path, class: 'btn btn-info text-center'
