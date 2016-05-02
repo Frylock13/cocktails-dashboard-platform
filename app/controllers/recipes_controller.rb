@@ -9,7 +9,7 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id]).decorate
-    @reviews = @recipe&.reviews.includes(:chef).decorate
+    @reviews = @recipe.reviews.includes(:chef).decorate
   end
 
   def new
