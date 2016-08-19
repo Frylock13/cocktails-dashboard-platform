@@ -8,5 +8,5 @@
 
     - if current_user
       .actions
-        = review.check_edit_action(current_user, params[:id])
-        = review.check_destroy_action(current_user, params[:id])
+        = review.check_permissions_for_edit_action(current_user, params[:id])
+        = review.check_permissions_for_destroy_action(current_user, params[:id])

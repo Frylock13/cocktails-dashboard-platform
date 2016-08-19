@@ -3,8 +3,7 @@
     .recipe.col-md-12.jumbotron
       .chef-avatar.col-md-2
         .avatar
-          = image_tag recipe.chef.avatar.url(:thumb)
-        = link_to recipe.chef.name, chef_path(recipe.chef.id)
+          = image_tag recipe.image.url(:thumb)
 
       .info.col-md-10
         %h2= link_to recipe.name, recipe_path(recipe.id)
@@ -18,8 +17,8 @@
           = link_to 'Show', recipe_path(recipe.id), class: 'btn btn-info'
           
           - if current_user
-            = recipe.decorate.check_edit_action(current_user)
-            = recipe.decorate.check_destroy_action(current_user)
+            = recipe.decorate.check_permissions_for_edit_action(current_user)
+            = recipe.decorate.check_permissions_for_destroy_action(current_user)
 
           .votes
             .like

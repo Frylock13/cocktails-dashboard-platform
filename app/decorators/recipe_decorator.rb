@@ -8,13 +8,13 @@ class RecipeDecorator < Draper::Decorator
     "Posted by: #{time_ago_in_words(object.created_at)} ago"
   end
 
-  def check_edit_action(user)
+  def check_permissions_for_edit_action(user)
     if admin?(user) || owner?(user)
       h.link_to 'Edit', edit_recipe_path(object.id), class: 'btn btn-warning'
     end
   end
 
-  def check_destroy_action(user)
+  def check_permissions_for_destroy_action(user)
     if admin?(user) || owner?(user)
       h.link_to 'Delete', recipe_path(object.id), method: :delete, class: 'btn btn-danger', data: {confirm: "Are you sure?"}
     end

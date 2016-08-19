@@ -4,7 +4,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @recipes = Recipe.includes(:chef).includes(:styles).includes(:ingredients).order('id DESC').page(params[:page])
+    @recipes = Recipe.includes(:styles).includes(:ingredients).order('id DESC').page(params[:page])
   end
 
   def show

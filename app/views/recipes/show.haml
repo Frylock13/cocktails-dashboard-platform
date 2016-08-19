@@ -18,11 +18,11 @@
       .actions
         - if current_user
           .edit
-            = @recipe.check_edit_action(current_user)
-            = @recipe.check_destroy_action(current_user)
+            = @recipe.check_permissions_for_edit_action(current_user)
+            = @recipe.check_permissions_for_destroy_action(current_user)
 
           = link_to 'Add review', new_recipe_review_path(recipe_id: @recipe.id), class: 'btn btn-primary'
-
+        
         .votes
           .like
             = link_to recipe_like_path(recipe_id: @recipe.id), id: 'like', method: :post do
