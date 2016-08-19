@@ -4,11 +4,11 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @recipes = Recipe.includes(:chef).order('id DESC').page(params[:page])
+    @recipes = Recipe.includes(:chef).includes(:styles).includes(:ingredients).order('id DESC').page(params[:page])
   end
 
   def show
-    @recipe = Recipe.find(params[:id]).decorate
+    @recipe = Recipe.includes(:styles).includes(:ingredients).find(params[:id]).decorate
     @reviews = @recipe.reviews.includes(:chef).decorate
   end
 
