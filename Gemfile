@@ -24,7 +24,9 @@ gem 'font-awesome-rails'
 gem 'kaminari'#, :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
 gem 'bootstrap-kaminari-views'
 gem 'friendly_id', '~> 5.1.0'
-#gem "rails-observers", github: "rails/rails-observers"
+gem 'mechanize'
+gem 'figaro'
+gem 'colorize'
 
 group :test do
   gem 'rspec-rails'
