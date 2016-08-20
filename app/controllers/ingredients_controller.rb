@@ -5,11 +5,19 @@ class IngredientsController < ApplicationController
   end
 
   def show
-    @ingredient = Ingredient.friendly.find(params[:id])
+    find_ingredient
     @recipes = @ingredient.recipes.includes(:chef)
   end
 
   def destroy
-    
+    find_ingredient
+    @ingredient.destroy
+    redirect_to ingredients_path
+  end
+
+  private
+
+  def find_ingredient
+    @ingredient = Ingredient.friendly.find(params[:id])
   end
 end
