@@ -8,11 +8,11 @@ module Api
     end
 
     def call
-      response = api_call
+      response = get_response
       results = get_filtered_array_of_results(response.body)
     end
 
-    def api_call
+    def get_response
       encoded_url = URI.encode("http://api.ababeen.com/api/images.php?q=#{object_name} cocktail&count=100")
       response = HTTParty.get(encoded_url)
       response
