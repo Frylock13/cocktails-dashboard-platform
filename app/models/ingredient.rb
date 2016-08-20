@@ -1,5 +1,8 @@
 class Ingredient < ApplicationRecord
 
+  # find and set image before creating
+  include Imagable
+
   extend FriendlyId
   friendly_id :name, use: :slugged
   

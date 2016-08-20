@@ -27,6 +27,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'mechanize'
 gem 'figaro'
 gem 'colorize'
+gem 'httparty'
 
 group :test do
   gem 'rspec-rails'
