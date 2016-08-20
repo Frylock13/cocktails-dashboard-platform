@@ -1,4 +1,10 @@
 .styles-show.container
   %h1.text-center= @ingredient.name
 
+  - if current_user&.admin?
+    .actions.center
+      = link_to 'Set image', ingredient_images_path(ingredient_id: @ingredient.slug), class: 'btn btn-primary'
+
+  = image_tag @ingredient.image.url, class: 'center'
+
   = render 'recipes/list'
