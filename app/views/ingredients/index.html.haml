@@ -1,5 +1,7 @@
 .ingredients-index.container
   %h1.text-center All ingredients
 
-  .ingredients-list
+  .ingredients-list.row
     = render @ingredients
+
+  = paginate @ingredients, theme: 'twitter-bootstrap-3'

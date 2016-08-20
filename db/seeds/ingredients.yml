@@ -1,4 +1,514 @@
+- name: 151 proof rum
+- name: 7-Up
+- name: Absinthe
+- name: Absolut Citron
+- name: Absolut Kurant
+- name: Absolut Mandrin
+- name: Absolut Peppar
+- name: Absolut Vodka
+- name: Acerola
+- name: Advocaat
 - name: Aftershock
 - name: Ale
 - name: Alizé
 - name: Allspice
+- name: Almond flavoring
+- name: Almond syrup
+- name: Almond
+- name: Amaretto
+- name: Amarula Cream
+- name: Amer Picon
+- name: Angelica root
+- name: Angostura bitters
+- name: Anisette
+- name: Anise
+- name: Anis
+- name: Aperol
+- name: Apfelkorn
+- name: Apple brandy
+- name: Apple cider
+- name: Apple juice
+- name: Apple schnapps
+- name: Apple-cranberry juice
+- name: Applejack
+- name: Apple
+- name: Apricot brandy
+- name: Apricot liqueur
+- name: Apricot nectar
+- name: Apricot
+- name: Aquavit
+- name: Asafoetida
+- name: Avocado
+- name: Añejo rum
+- name: Bacardi Limon
+- name: Bailey's irish cream
+- name: Banana liqueur
+- name: Banana rum
+- name: Banana syrup
+- name: Banana
+- name: Barenjager
+- name: Batida de Coco
+- name: Battery
+- name: Becherovka
+- name: Beef bouillon
+- name: Beer
+- name: Benedictine
+- name: Berries
+- name: Bitter lemon
+- name: Bitters
+- name: Black pepper
+- name: Black rum
+- name: Black Sambuca
+- name: Blackberries
+- name: Blackberry brandy
+- name: Blackberry schnapps
+- name: Blackcurrant cordial
+- name: Blackcurrant schnapps
+- name: Blackcurrant squash
+- name: Blavod vodka
+- name: Blended whiskey
+- name: Bloody mary mix
+- name: Blue Curacao
+- name: Blueberries
+- name: Blueberry schnapps
+- name: Bourbon
+- name: Brandy
+- name: Bread
+- name: Brown sugar
+- name: Butterscotch schnapps
+- name: Butter
+- name: Cachaca
+- name: Cactus Juice liqueur
+- name: Calvados
+- name: Campari
+- name: Canadian whisky
+- name: Candy
+- name: Cantaloupe
+- name: Cappuccino
+- name: Caramel coloring
+- name: Caramel liqueur
+- name: Caramel
+- name: Carbonated soft drink
+- name: Carbonated water
+- name: Cardamom
+- name: Carrot
+- name: Cayenne pepper
+- name: Celery salt
+- name: Celery
+- name: Chambord raspberry liqueur
+- name: Champagne
+- name: Charleston Follies
+- name: Cheri Beri Pucker
+- name: Cherries
+- name: Cherry brandy
+- name: Cherry Cola
+- name: Cherry Heering
+- name: Cherry juice
+- name: Cherry liqueur
+- name: Cherry syrup
+- name: Cherry vodka
+- name: Cherry
+- name: Chili sauce
+- name: Chocolate ice-cream
+- name: Chocolate liqueur
+- name: Chocolate milk
+- name: Chocolate mint liqueur
+- name: Chocolate syrup
+- name: Chocolate
+- name: Cider
+- name: Cinnamon schnapps
+- name: Cinnamon
+- name: Cinzano Bitters
+- name: Cinzano Orancio
+- name: Citrus vodka
+- name: Clamato juice
+- name: Cloves
+- name: Clove
+- name: Club soda
+- name: Coca-Cola
+- name: Cocktail onion
+- name: Cocoa powder
+- name: Coconut cream
+- name: Coconut liqueur
+- name: Coconut milk
+- name: Coconut rum
+- name: Coconut syrup
+- name: Coconut
+- name: Coffee brandy
+- name: Coffee liqueur
+- name: Coffeemate
+- name: Coffee
+- name: Cognac
+- name: Cointreau
+- name: Cola
+- name: Collins mix
+- name: Condensed milk
+- name: Coriander
+- name: Corn syrup
+- name: Cornstarch
+- name: Corona
+- name: Cranberries
+- name: Cranberry juice
+- name: Cranberry liqueur
+- name: Cranberry vodka
+- name: Cream of coconut
+- name: Cream soda
+- name: Cream
+- name: Creme de Almond
+- name: Creme de Banane
+- name: Creme de Cacao
+- name: Creme de Cassis
+- name: Creme de Fraise des Bois
+- name: Creme de Fraise
+- name: Creme de Noyaux
+- name: Crown Royal
+- name: Crystal light
+- name: Cucumber
+- name: Cumin seed
+- name: Curacao
+- name: Cynar
+- name: Daiquiri mix
+- name: Dark Creme de Cacao
+- name: Dark rum
+- name: Dr. Pepper
+- name: Drambuie
+- name: Dry Vermouth
+- name: Dubonnet Blanc
+- name: Dubonnet Rouge
+- name: Egg white
+- name: Egg yolk
+- name: Eggnog
+- name: Egg
+- name: Erin Cream
+- name: Espresso
+- name: Everclear
+- name: Fanta
+- name: Fennel seeds
+- name: Fernet Branca
+- name: Figs
+- name: Firewater
+- name: Food coloring
+- name: Forbidden Fruit
+- name: Frangelico
+- name: Fresca
+- name: Fruit cocktail
+- name: Fruit juice
+- name: Fruit punch
+- name: Fruit syrup
+- name: Fruit
+- name: Galliano
+- name: Gatorade
+- name: Gelatin
+- name: Genever
+- name: George Dickel
+- name: Ginger ale
+- name: Ginger beer
+- name: Ginger
+- name: Gin
+- name: Glycerine
+- name: Godiva liqueur
+- name: Gold rum
+- name: Gold tequila
+- name: Goldschlager
+- name: Grain alcohol
+- name: Grand Marnier
+- name: Grape juice
+- name: Grape Pucker
+- name: Grape schnapps
+- name: Grape soda
+- name: Grapefruit juice
+- name: Grapefruit schnapps
+- name: Grapefruit-lemon soda
+- name: Grapefruit
+- name: Grapes
+- name: Grappa
+- name: Green Chartreuse
+- name: Green Creme de Menthe
+- name: Green Curacao
+- name: Grenadine
+- name: Guava juice
+- name: Guava syrup
+- name: Guinness stout
+- name: Half-and-half
+- name: Hawaiian Punch
+- name: Hazelnut liqueur
+- name: Heavy cream
+- name: Honey
+- name: Hoopers Hooch
+- name: Horseradish
+- name: Hot chocolate
+- name: Hot Damn
+- name: Hot red pepper flakes
+- name: Hpnotiq
+- name: Ice 101
+- name: Ice-cream
+- name: Iced tea
+- name: Ice
+- name: Irish cream
+- name: Irish Mist
+- name: Irish whiskey
+- name: Jack Daniels
+- name: Jalapeno
+- name: Jello
+- name: Jim Beam
+- name: Johnnie Walker
+- name: Jolt Cola
+- name: Jose Cuervo
+- name: Jägermeister
+- name: Kahlua
+- name: Key Largo schnapps
+- name: Kirschwasser
+- name: Kiwi liqueur
+- name: Kiwi
+- name: Kool-Aid
+- name: Kummel
+- name: Kumquat
+- name: Lager
+- name: Lakka
+- name: Lemon gin
+- name: Lemon juice
+- name: Lemon liqueur
+- name: Lemon peel
+- name: Lemon schnapps
+- name: Lemon soda
+- name: Lemon vodka
+- name: Lemon-lime mix
+- name: Lemon-lime soda
+- name: Lemonade
+- name: Lemon
+- name: Licor 43
+- name: Licorice root
+- name: Light cream
+- name: Light rum
+- name: Lillet
+- name: Lime juice cordial
+- name: Lime juice
+- name: Lime liqueur
+- name: Lime peel
+- name: Lime vodka
+- name: Limeade
+- name: Lime
+- name: Limoncello
+- name: Lingonberry jam
+- name: Mad Dog 20/20
+- name: Madeira
+- name: Malibu rum
+- name: Malt liquor
+- name: Mandarine Napoleon
+- name: Mandarin
+- name: Mango juice
+- name: Mango syrup
+- name: Mango
+- name: Maple syrup
+- name: Maraschino cherry juice
+- name: Maraschino cherry
+- name: Maraschino liqueur
+- name: Margarita mix
+- name: Marjoram leaves
+- name: Marshmallows
+- name: Maui
+- name: Mello Yello
+- name: Melon liqueur
+- name: Melon vodka
+- name: Melon
+- name: Metaxa
+- name: Mezcal
+- name: Midori melon liqueur
+- name: Milk
+- name: Mint syrup
+- name: Mint
+- name: Molasses
+- name: Monin bitter
+- name: Mountain Dew
+- name: Nutmeg
+- name: Nuts
+- name: Olive juice
+- name: Olive
+- name: Orange bitters
+- name: Orange Curacao
+- name: Orange juice
+- name: Orange liqueur
+- name: Orange peel
+- name: Orange rum
+- name: Orange soda
+- name: Orange spiral
+- name: Orange vodka
+- name: Orange-flower water
+- name: Orange
+- name: Oreo cookie
+- name: Orgeat syrup
+- name: Ouzo
+- name: Papaya juice
+- name: Papaya
+- name: Parfait d'Amour
+- name: Passion fruit juice
+- name: Passion fruit syrup
+- name: Passoa
+- name: Peach brandy
+- name: Peach juice
+- name: Peach liqueur
+- name: Peach nectar
+- name: Peach schnapps
+- name: Peach Vodka
+- name: Peachtree schnapps
+- name: Peach
+- name: Peanut liqueur
+- name: Pear brandy
+- name: Pear juice
+- name: Pear liqueur
+- name: Pear soft drink
+- name: Pear
+- name: Pepper sauce
+- name: Peppermint extract
+- name: Peppermint schnapps
+- name: Pepsi Cola
+- name: Pernod
+- name: Peychaud bitters
+- name: Pickled pepper
+- name: Pimm's No. 1
+- name: Pina colada mix
+- name: Pineapple juice
+- name: Pineapple rum
+- name: Pineapple soda
+- name: Pineapple vodka
+- name: Pineapple-coconut juice
+- name: Pineapple-orange juice
+- name: Pineapple-orange-banana juice
+- name: Pineapple
+- name: Pineau des Charentes
+- name: Pink lemonade
+- name: Pisang Ambon
+- name: Pisco
+- name: Pistachio liqueur
+- name: Piña Colada
+- name: Plums
+- name: Port
+- name: Powdered sugar
+- name: Prune juice
+- name: Pumpkin
+- name: Purple passion
+- name: Raisins
+- name: Raki
+- name: Raspberries
+- name: Raspberry cordial
+- name: Raspberry jam
+- name: Raspberry juice
+- name: Raspberry liqueur
+- name: Raspberry schnapps
+- name: Raspberry syrup
+- name: Raspberry vodka
+- name: Razzmatazz
+- name: Red Bull
+- name: Red wine
+- name: RedRum
+- name: Rhubarb
+- name: Ricard
+- name: Rock and rye
+- name: Root beer schnapps
+- name: Root beer
+- name: Rose's sweetened lime juice
+- name: Rosewater
+- name: Rum cream liqueur
+- name: Rumple Minze
+- name: Rum
+- name: Rye whiskey
+- name: Safari
+- name: Sake
+- name: Salt
+- name: Sambuca
+- name: Sarsaparilla
+- name: Saurer apfel
+- name: Schnapps
+- name: Schweppes Lemon
+- name: Schweppes Russchian
+- name: Scotch
+- name: Seagram 7
+- name: Sherbet
+- name: Sherry
+- name: Shochu
+- name: Sirup of roses
+- name: Sloe gin
+- name: Snapple
+- name: Soda water
+- name: Sour apple liqueur
+- name: Sour Apple Pucker
+- name: Sour mix
+- name: Southern Comfort
+- name: Soy milk
+- name: Soy sauce
+- name: Sparkling white wine
+- name: Spiced rum
+- name: Sprite
+- name: Squirt
+- name: St. Hallvard
+- name: Stout
+- name: Strawberries
+- name: Strawberry juice
+- name: Strawberry liqueur
+- name: Strawberry schnapps
+- name: Strawberry syrup
+- name: Strawberry vodka
+- name: Strega
+- name: Sugar syrup
+- name: Sugar
+- name: Sunny delight
+- name: Surge
+- name: Swedish Punsch
+- name: Sweet and sour
+- name: Sweet Vermouth
+- name: Swiss Mocha Cream liqueur
+- name: Tabasco sauce
+- name: Taboo
+- name: Tang
+- name: Tawny port
+- name: Tea
+- name: Tennessee whiskey
+- name: Tequila Rose
+- name: Tequila
+- name: Thunderbird
+- name: Tia maria
+- name: Tomato juice
+- name: Tonic water
+- name: Triple sec
+- name: Tropical fruit schnapps
+- name: Tropicana
+- name: Tuaca
+- name: V8 juice
+- name: Vanilla extract
+- name: Vanilla ice-cream
+- name: Vanilla liqueur
+- name: Vanilla schnapps
+- name: Vanilla syrup
+- name: Vanilla vodka
+- name: Vanilla
+- name: Vermouth
+- name: Vinegar
+- name: Vodka
+- name: Watermelon liqueur
+- name: Watermelon schnapps
+- name: Watermelon
+- name: Water
+- name: West Coast Cooler
+- name: Whipped cream
+- name: Whipping cream
+- name: Whiskey liqueur
+- name: Whiskey
+- name: Whisky
+- name: White chocolate liqueur
+- name: White cranberry juice
+- name: White Creme de Menthe
+- name: White grape juice
+- name: White port
+- name: White rum
+- name: White wine
+- name: Wild Spirit liqueur
+- name: Wild Turkey
+- name: Wildberry schnapps
+- name: Wine
+- name: Worcestershire sauce
+- name: Wormwood
+- name: Yeast
+- name: Yellow Chartreuse
+- name: Yoghurt
+- name: Yukon Jack
+- name: Zima
