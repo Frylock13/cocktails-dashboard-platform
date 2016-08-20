@@ -1,9 +1,5 @@
-.styles-show.container
+.ingredients-show.container
   %h1.text-center= @ingredient.name
-
-  - if current_user&.admin?
-    .actions.center
-      = link_to 'Find images in Google', ingredient_images_path(ingredient_id: @ingredient.slug), class: 'btn btn-primary center'
 
   = image_tag @ingredient.image.url, class: 'center adaptive-image'
 

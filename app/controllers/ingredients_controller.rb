@@ -8,4 +8,8 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.friendly.find(params[:id])
     @recipes = @ingredient.recipes.includes(:chef)
   end
+
+  def destroy
+    
+  end
 end

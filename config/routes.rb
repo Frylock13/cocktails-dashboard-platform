@@ -10,10 +10,8 @@ Rails.application.routes.draw do
 
   resources :chefs, only: [:index, :show, :update]
   resources :styles, only: [:index, :show]
-  resources :ingredients, only: [:index, :show] do
-    resources :images, only: [:index, :update], controller: 'ingredients/images' do
-      put :update_image
-    end
+  resources :ingredients, only: [:index, :show, :destroy] do
+    resources :images, only: [:index, :update], controller: 'ingredients/images'
   end
   resource :profile, only: [:show, :edit]
 
