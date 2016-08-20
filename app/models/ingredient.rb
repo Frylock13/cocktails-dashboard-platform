@@ -14,7 +14,7 @@ class Ingredient < ApplicationRecord
   has_many :recipe_ingredients, dependent: :destroy
   has_many :recipes, through: :recipe_ingredients
 
-  paginates_per 32
+  paginates_per 30
 
   before_create do
     get_and_set_image
