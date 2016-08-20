@@ -28,6 +28,7 @@ gem 'mechanize'
 gem 'figaro'
 gem 'colorize'
 gem 'httparty'
+gem 'binding_of_caller'
 
 group :test do
   gem 'rspec-rails'
