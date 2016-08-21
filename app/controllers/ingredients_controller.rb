@@ -11,6 +11,7 @@ class IngredientsController < ApplicationController
 
   def destroy
     find_ingredient
+    authorize @ingredient
     @ingredient.destroy
     redirect_to ingredients_path
   end

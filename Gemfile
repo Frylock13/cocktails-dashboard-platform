@@ -31,6 +31,7 @@ gem 'figaro'
 gem 'colorize'
 gem 'httparty'
 gem 'binding_of_caller'
+gem 'pundit'
 
 group :test do
   gem 'rspec-rails'
