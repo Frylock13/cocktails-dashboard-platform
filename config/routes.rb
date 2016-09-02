@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'pages#home'
+
   devise_for :users
 
   resources :recipes do
@@ -15,11 +17,11 @@ Rails.application.routes.draw do
   end
   resource :profile, only: [:show, :edit]
 
-  root 'pages#home'
-
   namespace :api do
     namespace :v1 do
-      resources :categories, only: [:show]
+      resources :categories, only: :show do
+        resources :recipes, only: :index
+      end
     end
   end
 end

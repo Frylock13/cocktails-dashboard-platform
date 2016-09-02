@@ -1,0 +1,32 @@
+- slug: beer
+  name: Beer
+
+- slug: cocktails,
+  name: Cocktails
+
+- slug: cocoa,
+  name: Cocoa
+
+- slug: coffee-tea,
+  name: Coffee/Tea
+
+- slug: homemade-liqueur,
+  name: Homemade Liqueur
+
+- slug: milk-float-shake,
+  name: Milk / Float / Shake
+
+- slug: ordinary-drink,
+  name: Ordinary Drink
+
+- slug: punch-party-drink,
+  name: Punch / Party Drink
+
+- slug: shot,
+  name: Shot
+
+- slug: soft-drink-soda,
+  name: Soft Drink / Soda
+
+- slug: other,
+  name: Other

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902222937) do
+ActiveRecord::Schema.define(version: 20160902232607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,6 +93,8 @@ ActiveRecord::Schema.define(version: 20160902222937) do
     t.datetime "image_updated_at"
     t.integer  "likes_count",        default: 0
     t.integer  "dislikes_count",     default: 0
+    t.integer  "category_id"
+    t.index ["category_id"], name: "index_recipes_on_category_id", using: :btree
     t.index ["chef_id"], name: "index_recipes_on_chef_id", using: :btree
   end
 
