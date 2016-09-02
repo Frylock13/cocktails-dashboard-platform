@@ -3,19 +3,13 @@ Recipe.destroy_all
 User.destroy_all
 Style.destroy_all
 Ingredient.destroy_all
+Category.destroy_all
 
 # Categories
-Category.create(slug: 'beer', name: "Beer")
-Category.create(slug: 'cocktails', name: "Cocktails")
-Category.create(slug: 'cocoa', name: "Cocoa")
-Category.create(slug: 'coffee-tea', name: "Coffee/Tea")
-Category.create(slug: 'homemade-liqueur', name: "Homemade Liqueur")
-Category.create(slug: 'milk-float-shake', name: "Milk / Float / Shake")
-Category.create(slug: 'ordinary-drink', name: "Ordinary Drink")
-Category.create(slug: 'punch-party-drink', name: "Punch / Party Drink")
-Category.create(slug: 'shot', name: "Shot")
-Category.create(slug: 'soft-drink-soda', name: "Soft Drink / Soda")
-Category.create(slug: 'other', name: "Other")
+seed_file = Rails.root.join('db', 'seeds', 'categories.yml')
+config = YAML::load_file(seed_file)
+# executing before_create callback which helps to find an image
+Category.create!(config)
 
 # Generate fake data
 5.times do 
