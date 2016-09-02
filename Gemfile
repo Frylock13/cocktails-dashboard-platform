@@ -31,7 +31,6 @@ gem 'mechanize'
 gem 'figaro'
 gem 'colorize'
 gem 'httparty'
-gem 'binding_of_caller'
 gem 'pundit'
 gem 'responders'
 
@@ -51,6 +50,7 @@ group :development do
   gem 'awesome_print'
   gem 'bullet'
   gem 'better_errors'
+  gem "binding_of_caller"
   gem 'rack-mini-profiler'
 end
 

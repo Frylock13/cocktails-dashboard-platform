@@ -4,8 +4,6 @@ class CreateCategories < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :slug
       t.integer :recipes_count
-
-      t.timestamps
     end
   end
 end

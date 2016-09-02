@@ -17,4 +17,18 @@ Style.create(name: 'Deutch', flag: File.new("#{Rails.root}/db/seeds/flag-deutch.
 # Ingredients
 seed_file = Rails.root.join('db', 'seeds', 'ingredients.yml')
 config = YAML::load_file(seed_file)
+# executing callback which helps ot find an image
 Ingredient.create!(config)
+
+# Categories
+Category.create(slug: 'beer', name: "Beer")
+Category.create(slug: 'cocktails', name: "Cocktails")
+Category.create(slug: 'cocoa', name: "Cocoa")
+Category.create(slug: 'coffee-tea', name: "Coffee/Tea")
+Category.create(slug: 'homemade-liqueur', name: "Homemade Liqueur")
+Category.create(slug: 'milk-float-shake', name: "Milk / Float / Shake")
+Category.create(slug: 'ordinary-drink', name: "Ordinary Drink")
+Category.create(slug: 'punch-party-drink', name: "Punch / Party Drink")
+Category.create(slug: 'shot', name: "Shot")
+Category.create(slug: 'soft-drink-soda', name: "Soft Drink / Soda")
+Category.create(slug: 'other', name: "Other")
