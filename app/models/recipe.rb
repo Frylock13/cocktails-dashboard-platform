@@ -17,6 +17,7 @@ class Recipe < ApplicationRecord
   has_many :reviews
   
   belongs_to :chef, counter_cache: true
+  belongs_to :category, counter_cache: true
 
   paginates_per 5
 end

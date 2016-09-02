@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160405205152) do
+ActiveRecord::Schema.define(version: 20160902222937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.integer  "recipes_count"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "chefs", force: :cascade do |t|
     t.datetime "created_at",                      null: false
@@ -29,19 +36,17 @@ ActiveRecord::Schema.define(version: 20160405205152) do
     t.integer  "dislikes_count",      default: 0
     t.integer  "recipes_count",       default: 0
     t.integer  "reviews_count",       default: 0
+    t.index ["user_id"], name: "index_chefs_on_user_id", using: :btree
   end
-
-  add_index "chefs", ["user_id"], name: "index_chefs_on_user_id", using: :btree
 
   create_table "dislikes", force: :cascade do |t|
     t.integer  "chef_id"
     t.integer  "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["chef_id"], name: "index_dislikes_on_chef_id", using: :btree
+    t.index ["recipe_id"], name: "index_dislikes_on_recipe_id", using: :btree
   end
-
-  add_index "dislikes", ["chef_id"], name: "index_dislikes_on_chef_id", using: :btree
-  add_index "dislikes", ["recipe_id"], name: "index_dislikes_on_recipe_id", using: :btree
 
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
@@ -57,26 +62,23 @@ ActiveRecord::Schema.define(version: 20160405205152) do
     t.integer  "recipe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["chef_id"], name: "index_likes_on_chef_id", using: :btree
+    t.index ["recipe_id"], name: "index_likes_on_recipe_id", using: :btree
   end
-
-  add_index "likes", ["chef_id"], name: "index_likes_on_chef_id", using: :btree
-  add_index "likes", ["recipe_id"], name: "index_likes_on_recipe_id", using: :btree
 
   create_table "recipe_ingredients", force: :cascade do |t|
     t.integer "recipe_id"
     t.integer "ingredient_id"
+    t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id", using: :btree
+    t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id", using: :btree
   end
-
-  add_index "recipe_ingredients", ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id", using: :btree
-  add_index "recipe_ingredients", ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id", using: :btree
 
   create_table "recipe_styles", force: :cascade do |t|
     t.integer "style_id"
     t.integer "recipe_id"
+    t.index ["recipe_id"], name: "index_recipe_styles_on_recipe_id", using: :btree
+    t.index ["style_id"], name: "index_recipe_styles_on_style_id", using: :btree
   end
-
-  add_index "recipe_styles", ["recipe_id"], name: "index_recipe_styles_on_recipe_id", using: :btree
-  add_index "recipe_styles", ["style_id"], name: "index_recipe_styles_on_style_id", using: :btree
 
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
@@ -91,9 +93,8 @@ ActiveRecord::Schema.define(version: 20160405205152) do
     t.datetime "image_updated_at"
     t.integer  "likes_count",        default: 0
     t.integer  "dislikes_count",     default: 0
+    t.index ["chef_id"], name: "index_recipes_on_chef_id", using: :btree
   end
-
-  add_index "recipes", ["chef_id"], name: "index_recipes_on_chef_id", using: :btree
 
   create_table "reviews", force: :cascade do |t|
     t.integer  "chef_id"
@@ -101,10 +102,9 @@ ActiveRecord::Schema.define(version: 20160405205152) do
     t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["chef_id"], name: "index_reviews_on_chef_id", using: :btree
+    t.index ["recipe_id"], name: "index_reviews_on_recipe_id", using: :btree
   end
-
-  add_index "reviews", ["chef_id"], name: "index_reviews_on_chef_id", using: :btree
-  add_index "reviews", ["recipe_id"], name: "index_reviews_on_recipe_id", using: :btree
 
   create_table "styles", force: :cascade do |t|
     t.string   "name"
@@ -129,10 +129,9 @@ ActiveRecord::Schema.define(version: 20160405205152) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.boolean  "admin",                  default: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   add_foreign_key "dislikes", "chefs"
   add_foreign_key "dislikes", "recipes"
