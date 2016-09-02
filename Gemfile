@@ -33,6 +33,7 @@ gem 'colorize'
 gem 'httparty'
 gem 'binding_of_caller'
 gem 'pundit'
+gem 'responders'
 
 group :test do
   gem 'rspec-rails'

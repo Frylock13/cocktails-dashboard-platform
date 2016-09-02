@@ -367,6 +367,7 @@ DEPENDENCIES
   pundit
   rack-mini-profiler
   rails (= 5.0.0.1)
+  responders
   rspec-rails
   sass-rails (~> 5.0)
   spring
