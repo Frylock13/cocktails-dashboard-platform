@@ -1,2 +1,8 @@
-%h1 Categories#show
-%p Find me in app/views/categories/show.html.haml
+.categories-show.container
+  .row
+    %h1.text-center= @category.name
+    %p.center.adaptive-image= @category.description
+
+    - if current_user&.admin?
+      .actions
+

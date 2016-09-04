@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @category = Category.find_by(slug: params[:id])
   end
 
   def edit
