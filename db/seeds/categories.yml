@@ -1,32 +1,54 @@
 - slug: beer
   name: Beer
+  description: Beer is the world's most widely consumed and probably the oldest alcoholic beverage; it is the third most popular drink overall, 
+               after water and tea. The production of beer is called brewing, which involves the fermentation of starches, mainly derived from cereal 
+               grains—most commonly malted barley, although wheat, maize (corn), and rice are widely used.
 
 - slug: cocktails
   name: Cocktails
+  description: When a mixed drink contains only a distilled spirit and a mixer, such as soda or fruit juice, it is a highball; many of the International 
+               Bartenders Association Official Cocktails are highballs. When a cocktail contains only a distilled spirit and a liqueur, it is a duo and when 
+               it adds a mixer, it is a trio. Additional ingredients may be sugar, honey, milk, cream, and various herbs.
 
 - slug: cocoa
   name: Cocoa
+  description: The cocoa bean, also cacao bean or simply cocoa (/ˈkoʊ.koʊ/) or cacao (/kəˈkaʊ/), is the dried and fully fermented fatty seed of Theobroma cacao, 
+               from which cocoa solids and cocoa butter can be extracted. They are the basis of chocolate, as well as many Mesoamerican foods such as mole and tejate.
 
 - slug: coffee-tea
   name: Coffee/Tea
+  description: Coffee is a brewed drink prepared from roasted coffee beans, which are the seeds of berries from the Coffea plant. The genus Coffea is native to tropical 
+               Africa, Madagascar, and the Comoros, Mauritius and Réunion in the Indian Ocean. The plant was exported from Africa to countries around the world and 
+               coffee plants are now cultivated in over 70 countries, primarily in the equatorial regions of the Americas, Southeast Asia, India, and Africa.
 
 - slug: homemade-liqueur
   name: Homemade Liqueur
+  description: A liqueur (US /lɪˈkɜːr/ or UK /lɪˈkjʊər/) is an alcoholic beverage made from a distilled spirit that has been flavored with fruit, cream, herbs, spices, 
+               flowers or nuts and bottled with added sugar or other sweetener (such as high-fructose corn syrup). Liqueurs are typically quite sweet; they are usually 
+               not aged for long after the ingredients are mixed, but may have resting periods during their production to allow flavors to marry.
 
 - slug: milk-float-shake
   name: Milk / Float / Shake
+  description: A milkshake is a sweet, cold beverage which is usually made from milk, ice cream, or iced milk, and flavorings or sweeteners such as butterscotch, caramel 
+               sauce, chocolate sauce, or fruit syrup. Outside the United States, milkshakes using ice cream or iced milk are sometimes called a thick milkshake or thick 
+               shake; in New England, the term frappe may be used to differentiate it from thinner forms of flavored milk.
 
 - slug: ordinary-drink
   name: Ordinary Drink
+  description: Text
 
 - slug: punch-party-drink
   name: Punch / Party Drink
+  description: Text
 
 - slug: shot
   name: Shot
+  description: Text
 
 - slug: soft-drink-soda
   name: Soft Drink / Soda
+  description: Text
 
 - slug: other
   name: Other
+  description: Text

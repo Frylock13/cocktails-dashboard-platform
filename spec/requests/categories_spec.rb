@@ -11,6 +11,12 @@ describe 'Categories' do
     expect(page).to have_content 'All categories'
   end
 
+  it 'checks title on category page' do
+    Category.create(name: 'Beer', slug: 'beer')
+    visit '/categories/beer'
+    expect(page).to have_content 'Beer'
+  end
+
   context 'not admin' do
     before(:each) do
       login(user.email, user.password)
