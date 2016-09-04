@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :reviews, except: :show
   end
 
+  resources :categories, only: [:index, :show, :edit, :update]
   resources :chefs, only: [:index, :show, :update]
   resources :styles, only: [:index, :show]
   resources :ingredients, only: [:index, :show, :destroy] do

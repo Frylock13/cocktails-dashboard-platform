@@ -1,0 +1,10 @@
+.row
+  .name.text-center
+    %h2= category.name
+
+  .link.text-center
+    = link_to "Link", category_path(category.slug), class: 'center'
+
+  - if current_user&.admin?
+    .actions.center
+      = link_to 'Edit', edit_category_path(category.slug), method: :delete, class: 'btn btn-danger center'
