@@ -3,7 +3,7 @@ class Api::V1::CategoriesController < ApplicationController
   respond_to :json
 
   def index
-    categories = Category.all
+    categories = Category.order(:name)
     respond_with categories
   end
 
