@@ -7,7 +7,7 @@
 
       .info.col-md-10
         %h2= link_to recipe.name, recipe_path(recipe.id)
-        %p= recipe.summary
+        %p= recipe.description
         %span= recipe.decorate.posted_by
 
         = render 'recipes/styles', recipe: recipe
