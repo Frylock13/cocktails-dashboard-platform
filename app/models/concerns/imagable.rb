@@ -2,7 +2,7 @@ module Imagable
   # This module helps to find and set image for object before it will be created
   extend ActiveSupport::Concern
 
-  def get_and_set_image
+  def upload_an_image
     # stop executing if image passes in params 
     return if image.present?
 

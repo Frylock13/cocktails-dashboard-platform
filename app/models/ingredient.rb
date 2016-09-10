@@ -1,6 +1,5 @@
 class Ingredient < ApplicationRecord
 
-  # find and set image before creating
   include Imagable
 
   extend FriendlyId
@@ -17,6 +16,6 @@ class Ingredient < ApplicationRecord
   paginates_per 30
 
   before_create do
-    get_and_set_image
+    upload_an_image
   end
 end
