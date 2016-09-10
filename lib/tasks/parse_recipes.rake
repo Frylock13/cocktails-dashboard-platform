@@ -16,7 +16,7 @@ namespace :parse do
 
         last_correct_index = current_index
         current_index += 1
-        puts "Last existing id is #{last_correct_index}".green
+        puts "Last existing id is #{last_correct_index}".blue
 
         parse_page_to_create_recipe(page)
       rescue Mechanize::ResponseCodeError
@@ -35,6 +35,7 @@ namespace :parse do
     recipe = Recipe.new
     recipe.name = perform_recipe_name(page)
     recipe.save!
+    puts "#{recipe.name} has created!".green
   end
 
   def perform_recipe_name(page)

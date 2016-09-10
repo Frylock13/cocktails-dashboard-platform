@@ -3,7 +3,7 @@
     .recipe.col-md-12.jumbotron
       .chef-avatar.col-md-2
         .avatar
-          = image_tag recipe.image.url(:thumb)
+          = image_tag recipe.image.url, class: 'thumb-img'
 
       .info.col-md-10
         %h2= link_to recipe.name, recipe_path(recipe.id)

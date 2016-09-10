@@ -38,11 +38,3 @@
         .reviews.row
           %h2.text-center Reviews
           = render @reviews
-
-  .col-md-2.chef
-    %h2.text-center Author:
-    %div.avatar
-      = image_tag @recipe.chef.avatar.url(:medium), class: 'center'
-
-      .text-center
-        = link_to @recipe.chef.name, chef_path(@recipe.chef.id)

@@ -2,11 +2,11 @@ class Recipe < ApplicationRecord
 
   include Imagable
 
-  has_attached_file :image, styles: { large: '500x500', thumb: '100x100' }, default_url: "missings/:style/recipe.png"
+  has_attached_file :image, default_url: "missings/:style/recipe.png"
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   #validates :chef_id, presence: true
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true, length: { maximum: 100 }
 
   has_many :likes
   has_many :dislikes
