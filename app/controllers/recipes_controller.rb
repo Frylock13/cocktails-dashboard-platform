@@ -4,11 +4,11 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @recipes = Recipe.includes(:styles).includes(:ingredients).order('id DESC').page(params[:page])
+    @recipes = Recipe.includes(:ingredients).order('id DESC').page(params[:page])
   end
 
   def show
-    @recipe = Recipe.includes(:styles).includes(:ingredients).find(params[:id]).decorate
+    @recipe = Recipe.includes(:ingredients).find(params[:id]).decorate
     @reviews = @recipe.reviews.includes(:chef).decorate
   end
 
@@ -72,7 +72,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :summary, :description, :image, style_ids: [], ingredient_ids: [])
+    params.require(:recipe).permit(:name, :summary, :description, :image, ingredient_ids: [])
   end
 
   def set_editable_recipe

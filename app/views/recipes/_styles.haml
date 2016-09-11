@@ -1,5 +1,0 @@
-- if recipe.styles.present?
-  .styles
-    %strong Styles:
-    - recipe.styles.each do |style|
-      %span= link_to style.name, style_path(style.slug)

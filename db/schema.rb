@@ -84,13 +84,6 @@ ActiveRecord::Schema.define(version: 20160911003137) do
     t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id", using: :btree
   end
 
-  create_table "recipe_styles", force: :cascade do |t|
-    t.integer "style_id"
-    t.integer "recipe_id"
-    t.index ["recipe_id"], name: "index_recipe_styles_on_recipe_id", using: :btree
-    t.index ["style_id"], name: "index_recipe_styles_on_style_id", using: :btree
-  end
-
   create_table "recipes", force: :cascade do |t|
     t.string   "name"
     t.text     "summary"
@@ -119,15 +112,6 @@ ActiveRecord::Schema.define(version: 20160911003137) do
     t.index ["recipe_id"], name: "index_reviews_on_recipe_id", using: :btree
   end
 
-  create_table "styles", force: :cascade do |t|
-    t.string   "name"
-    t.string   "slug"
-    t.string   "flag_file_name"
-    t.string   "flag_content_type"
-    t.integer  "flag_file_size"
-    t.datetime "flag_updated_at"
-  end
-
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
@@ -152,8 +136,6 @@ ActiveRecord::Schema.define(version: 20160911003137) do
   add_foreign_key "likes", "recipes"
   add_foreign_key "recipe_ingredients", "ingredients"
   add_foreign_key "recipe_ingredients", "recipes"
-  add_foreign_key "recipe_styles", "recipes"
-  add_foreign_key "recipe_styles", "styles"
   add_foreign_key "reviews", "chefs"
   add_foreign_key "reviews", "recipes"
 end

@@ -2,4 +2,4 @@
   .ingredients
     %strong Ingredients:
     - recipe.ingredients.each do |ingredient|
-      %span= link_to ingredient.name, ingredient_path(ingredient.slug)
+      %span= ingredient.name
