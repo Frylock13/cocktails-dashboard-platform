@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   resources :chefs, only: [:index, :show, :update]
   resources :styles, only: [:index, :show]
 
-  resources :ingredients, only: [:index, :show, :destroy] do
+  resources :ingredients, only: [:index] do
     resources :images, only: [:index, :update], controller: 'ingredients/images'
   end
 
-  resources :glasses, only: [:index, :destroy] do
+  resources :glasses, only: :index do
     resources :images, only: [:index, :update], controller: 'glasses/images'
   end
 

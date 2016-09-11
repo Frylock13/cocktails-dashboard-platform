@@ -31,7 +31,6 @@ gem 'mechanize'
 gem 'figaro'
 gem 'colorize'
 gem 'httparty'
-gem 'pundit'
 gem 'responders'
 
 group :test do

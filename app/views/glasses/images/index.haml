@@ -11,4 +11,4 @@
         .col-md-4
           = form_tag glass_image_path(@glass.id, 1), method: :put do
             = hidden_field_tag 'image_url', image
-            = image_submit_tag image, class: 'adaptive-image'
+            = image_submit_tag image, class: 'medium-img'

@@ -2,10 +2,8 @@
   .name.text-center
     %h2= glass.name
 
-  = image_tag glass.image.url, class: 'center adaptive-image'
+  = image_tag glass.image.url, class: 'center medium-img'
 
   - if current_user&.admin?
     .actions.center
-      = link_to 'Google images', glass_images_path(glass_id: glass.id), class: 'btn btn-primary center'
-
-      = link_to 'Delete', glass_path(glass.id), method: :delete, class: 'btn btn-danger center'
+      = link_to 'Change image', glass_images_path(glass_id: glass.id), class: 'btn btn-primary center'
