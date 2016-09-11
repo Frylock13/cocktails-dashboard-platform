@@ -12,4 +12,3 @@
           = form_tag ingredient_image_path(@ingredient.slug, 1), method: :put do
             = hidden_field_tag 'image_url', image
             = image_submit_tag image, class: 'adaptive-image'
-          //= link_to image_tag(image), ingredient_image_path(ingredient_id: @ingredient.slug, id: image), method: :put

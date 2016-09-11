@@ -6,7 +6,7 @@ class IngredientsController < ApplicationController
 
   def show
     find_ingredient
-    @recipes = @ingredient.recipes.includes(:chef)
+    @recipes = @ingredient.recipes
   end
 
   def destroy

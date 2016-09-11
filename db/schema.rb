@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160910001544) do
+ActiveRecord::Schema.define(version: 20160911003137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,18 @@ ActiveRecord::Schema.define(version: 20160910001544) do
     t.datetime "updated_at", null: false
     t.index ["chef_id"], name: "index_dislikes_on_chef_id", using: :btree
     t.index ["recipe_id"], name: "index_dislikes_on_recipe_id", using: :btree
+  end
+
+  create_table "glasses", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "recipes_count"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "slug"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -92,6 +104,8 @@ ActiveRecord::Schema.define(version: 20160910001544) do
     t.datetime "image_updated_at"
     t.integer  "likes_count",        default: 0
     t.integer  "dislikes_count",     default: 0
+    t.integer  "glass_id"
+    t.integer  "category_id"
     t.index ["chef_id"], name: "index_recipes_on_chef_id", using: :btree
   end
 

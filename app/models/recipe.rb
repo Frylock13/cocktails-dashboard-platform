@@ -18,6 +18,7 @@ class Recipe < ApplicationRecord
   
   belongs_to :chef, counter_cache: true
   belongs_to :category, counter_cache: true
+  belongs_to :glass, counter_cache: true
 
   paginates_per 5
 

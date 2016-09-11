@@ -13,9 +13,15 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show, :edit, :update]
   resources :chefs, only: [:index, :show, :update]
   resources :styles, only: [:index, :show]
+
   resources :ingredients, only: [:index, :show, :destroy] do
     resources :images, only: [:index, :update], controller: 'ingredients/images'
   end
+
+  resources :glasses, only: [:index, :destroy] do
+    resources :images, only: [:index, :update], controller: 'glasses/images'
+  end
+
   resource :profile, only: [:show, :edit]
 
   namespace :api do
