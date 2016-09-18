@@ -5,7 +5,7 @@ class Recipe < ApplicationRecord
   include Imagable
 
   has_attached_file :image, default_url: "missings/:style/recipe.png"
-  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+  validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   validates :name, presence: true, length: { maximum: 100 }
 
@@ -20,8 +20,4 @@ class Recipe < ApplicationRecord
   belongs_to :glass, counter_cache: true
 
   paginates_per 5
-
-  before_create do
-    upload_an_image
-  end
 end

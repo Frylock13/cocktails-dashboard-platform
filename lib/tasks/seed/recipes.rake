@@ -2,7 +2,7 @@ namespace :seed do
   desc "Import movie list"
   task recipes: :environment do
 
-    current_index = 13059
+    current_index = 13071
     last_correct_index = 0
 
     while true do
@@ -16,10 +16,10 @@ namespace :seed do
       else
         puts "Last existing remote id is #{last_correct_index}. There is no #{current_index} id.".red
         current_index += 1
-        next    
+        next
       end
 
       sleep 1
-    end   
-  end   
+    end
+  end
 end

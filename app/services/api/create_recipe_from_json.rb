@@ -75,7 +75,7 @@ module API
 
     def get_image
       image_url = json['strDrinkThumb']
-      image_url unless image_url.empty?
+      image_url if image_url != ''
     end
 
     def create_ingredient_associations(recipe_id)
