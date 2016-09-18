@@ -1,5 +1,9 @@
 - if recipe.ingredients.present?
   .ingredients
     %strong Ingredients:
-    - recipe.ingredients.each do |ingredient|
-      %span= ingredient.name
+    - recipe.recipe_ingredients.each do |association|
+      %ul
+        %li
+          %span
+            = association.ingredient.name
+            %strong= "(#{association.dose})"
