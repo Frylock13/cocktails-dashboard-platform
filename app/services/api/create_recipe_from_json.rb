@@ -12,7 +12,9 @@ module API
       @json = get_json
       return unless json
 
-      return_prepared_recipe_object
+      recipe = create_recipe
+      create_ingredient_associations(recipe.id)
+      recipe
     end
 
     def get_json
@@ -21,7 +23,7 @@ module API
       json['drinks'].first if json['drinks']
     end
 
-    def return_prepared_recipe_object
+    def create_recipe
       recipe = Recipe.new
 
       recipe.name = get_name
@@ -38,13 +40,11 @@ module API
     private
 
     def get_name
-      name = json['strDrink']
-      name
+      json['strDrink']
     end
 
     def get_description
-      description = json['strInstructions']
-      description
+      json['strInstructions']
     end
 
     def get_category_id
@@ -59,8 +59,7 @@ module API
     end
 
     def get_type
-      type = json['strAlcoholic']
-      type
+      json['strAlcoholic']
     end
 
     def get_glass_id
@@ -77,6 +76,11 @@ module API
     def get_image
       image_url = json['strDrinkThumb']
       image_url unless image_url.empty?
+    end
+
+    def create_ingredient_associations(recipe_id)
+      api = API::CreateIngredientsAssociationsFromJson.new(json, recipe_id)
+      api.call
     end
   end
 end
