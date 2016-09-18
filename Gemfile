@@ -32,7 +32,6 @@ gem 'figaro'
 gem 'colorize'
 gem 'httparty'
 gem 'responders'
-gem 'image_searcher', '~> 0.1.3'
 
 group :test do
   gem 'rspec-rails'
