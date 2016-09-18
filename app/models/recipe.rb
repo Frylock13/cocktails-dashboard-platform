@@ -10,9 +10,9 @@ class Recipe < ApplicationRecord
   #validates :chef_id, presence: true
   validates :name, presence: true, length: { maximum: 100 }
 
-  has_many :likes
-  has_many :dislikes
-  has_many :recipe_ingredients
+  has_many :likes, dependent: :destroy
+  has_many :dislikes, dependent: :destroy
+  has_many :recipe_ingredients, dependent: :destroy
   has_many :ingredients, through: :recipe_ingredients
   has_many :reviews
   

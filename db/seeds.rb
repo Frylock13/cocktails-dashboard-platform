@@ -7,5 +7,4 @@ RecipeIngredient.destroy_all
   user = User.create!(email: Faker::Internet.email, password: Faker::Internet.password)
   recipe = Recipe.create!(name: Faker::Lorem.word, description: Faker::Lorem.paragraph(15),
                           chef_id: user.id, image: Faker::Avatar.image, category_id: Category.first.id)
-  RecipeIngredient.create(recipe_id: recipe.id, ingredient_id: Ingredient.first.id)
 end
