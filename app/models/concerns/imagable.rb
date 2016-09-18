@@ -9,14 +9,14 @@ module Imagable
     api = Api::ImagesSearch.new(self.name)
     response = api.get_response
     results = api.get_filtered_array_of_results(response.body)
-    self.image = try_to_upload_image(results)
+    self.image = try_to_upload_image(results.first)
   end
 
   private
 
-  def try_to_upload_image(results)
+  def try_to_upload_image(image)
     begin
-      image = open(results.first)
+      image = open(image)
     rescue
       # write to missed.log id of object which has an error(with an image probably)
       write_debug_info_to_log

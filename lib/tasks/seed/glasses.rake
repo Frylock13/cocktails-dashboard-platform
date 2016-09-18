@@ -1,6 +1,6 @@
 namespace :seed do
-  desc "Seed ingredients"
-  task ingredients: :environment do
+  desc "Seed glasses"
+  task glasses: :environment do
 
   Glass.destroy_all
 
