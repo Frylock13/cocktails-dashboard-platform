@@ -11,3 +11,9 @@ This app based on Udemy tutorial - The Professional Ruby on Rails Developer with
 
 ### To do
 - [ ] Add activeadmin
+
+### Seed
+`rake db:seed`
+`rake seed:categories`
+`rake seed:ingredients`
+`rake seed:categories`
