@@ -1,5 +1,7 @@
 class Recipe < ApplicationRecord
 
+  self.inheritance_column = nil
+
   include Imagable
 
   has_attached_file :image, default_url: "missings/:style/recipe.png"

@@ -6,14 +6,15 @@ namespace :parse do
     last_correct_index = 0
 
     while true do
-      api = API::HandleRecipeDataFromJson.new(current_index)
+      api = API::CreateRecipeFromJson.new(current_index)
+      recipe = api.call
 
-      if api.call
+      if recipe
         last_correct_index = current_index
         current_index += 1
-        puts "Last existing id is #{last_correct_index}".blue
+        puts "Recipe #{recipe.id} has been created. Last existing remote id is #{last_correct_index}.".green
       else
-        puts "Last existing id is #{last_correct_index}. There is no #{current_index} id.".red
+        puts "Last existing remote id is #{last_correct_index}. There is no #{current_index} id.".red
         current_index += 1
         next    
       end
