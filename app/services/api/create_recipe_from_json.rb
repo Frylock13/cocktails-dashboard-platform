@@ -50,7 +50,12 @@ module API
     def get_category_id
       category_name = json['strCategory']
       category = Category.find_by(name: category_name)
-      category ? category.id : nil
+
+      if category
+        category.id
+      else
+        Category.find_by(name: 'Other').id
+      end
     end
 
     def get_type
@@ -61,11 +66,11 @@ module API
     def get_glass_id
       glass_name = json['strGlass']
       glass = Glass.find_by(name: glass_name)
-      
+
       if glass
         glass.id
       else
-        Glass.find_by(name: 'Other').id
+        Glass.find_by(name: 'Unknown glass type').id
       end
     end
 

@@ -13,7 +13,7 @@ module Api
     end
 
     def get_response
-      encoded_url = URI.encode("http://api.ababeen.com/api/images.php?q=#{object_name} cocktail&count=100")
+      encoded_url = URI.encode("http://api.ababeen.com/api/images.php?q=#{object_name}&count=100")
       response = HTTParty.get(encoded_url)
       response
     end

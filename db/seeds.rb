@@ -1,11 +1,6 @@
 Recipe.destroy_all
 User.destroy_all
-Category.destroy_all
-Ingredient.destroy_all
 RecipeIngredient.destroy_all
-
-Category.create(name: 'Category 1')
-Ingredient.create(name: 'Ingredient 1', image: File.new("#{Rails.root}/db/seeds/styles/flag-usa.png"))
 
 # Generate a fake data
 5.times do

@@ -27,7 +27,12 @@ module Imagable
 
   def write_debug_info_to_log
     class_name = self.class.name
-    object_id = self.class.last.id + 1
+    
+    if self.class.last
+      object_id = self.class.last.id + 1
+    else
+      1
+    end
 
     file_path = Rails.root.join('log', 'missed.log')
     open(file_path, 'a') do |f|

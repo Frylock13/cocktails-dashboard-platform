@@ -1,4 +1,4 @@
-namespace :parse do
+namespace :seed do
   desc "Import movie list"
   task recipes: :environment do
 
