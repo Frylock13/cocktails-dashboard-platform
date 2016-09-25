@@ -11,20 +11,17 @@ Rails.application.routes.draw do
   end
 
   resources :chefs, only: [:index, :show, :update]
-
   resources :ingredients, only: :index do
-    resources :images, only: [:index, :update], controller: 'ingredients/images'
+    resources :images, only: :index
   end
-
   resources :glasses, only: :index do
-    resources :images, only: [:index, :update], controller: 'glasses/images'
+    resources :images, only: :index
   end
-
   resources :categories, only: [:index, :show, :edit, :update] do
-    resources :images, only: [:index, :update], controller: 'categories/images'
+    resources :images, only: :index
   end
-
   resource :profile, only: [:show, :edit]
+  resources :images, only: :update
 
   namespace :api do
     namespace :v1 do

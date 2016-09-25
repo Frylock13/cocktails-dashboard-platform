@@ -6,4 +6,4 @@
 
   - if current_user&.admin?
     .actions.center
-      = link_to 'Change image', ingredient_images_path(ingredient_id: ingredient.slug), class: 'btn btn-primary center'
+      = link_to 'Change image', ingredient_images_path(ingredient_id: ingredient.id, type: 'Ingredient'), class: 'btn btn-primary center'
