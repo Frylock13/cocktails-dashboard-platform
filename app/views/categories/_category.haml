@@ -1,8 +1,9 @@
-.row
-  .col-md-3
-    .name
-      %h1= link_to category.name, category_path(category.slug)
+.col-md-4.ingredient
+  .name.text-center
+    %h2= category.name
 
-    - if current_user&.admin?
-      .actions.center
-        = link_to 'Edit', edit_category_path(category.slug), class: 'btn btn-warning center'
+  = image_tag category.image.url, class: 'medium-img'
+
+  - if current_user&.admin?
+    .actions.center
+      = link_to 'Change image', category_images_path(category_id: category.slug), class: 'btn btn-primary center'

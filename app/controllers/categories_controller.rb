@@ -7,10 +7,4 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find_by(slug: params[:id])
   end
-
-  def edit
-  end
-
-  def update
-  end
 end

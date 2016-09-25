@@ -9,12 +9,12 @@ module Imagable
     api = Api::ImagesSearch.new(self.name)
     response = api.get_response
     results = api.get_filtered_array_of_results(response.body)
-    self.image = try_to_upload_image(results.first)
+    self.image = try_to_get_image(results.first)
   end
 
   private
 
-  def try_to_upload_image(image)
+  def try_to_get_image(image)
     begin
       image = open(image)
     rescue

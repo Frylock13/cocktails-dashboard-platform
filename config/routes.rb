@@ -10,14 +10,20 @@ Rails.application.routes.draw do
     resources :reviews, except: :show
   end
 
-  resources :categories, only: [:index, :show, :edit, :update]
   resources :chefs, only: [:index, :show, :update]
+
   resources :ingredients, only: :index do
     resources :images, only: [:index, :update], controller: 'ingredients/images'
   end
+
   resources :glasses, only: :index do
     resources :images, only: [:index, :update], controller: 'glasses/images'
   end
+
+  resources :categories, only: [:index, :show, :edit, :update] do
+    resources :images, only: [:index, :update], controller: 'categories/images'
+  end
+
   resource :profile, only: [:show, :edit]
 
   namespace :api do
