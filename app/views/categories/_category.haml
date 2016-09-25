@@ -6,4 +6,4 @@
 
   - if current_user&.admin?
     .actions.center
-      = link_to 'Change image', category_images_path(category_id: category.slug), class: 'btn btn-primary center'
+      = link_to 'Change image', category_images_path(category_id: category.id, type: 'Category'), class: 'btn btn-primary center'

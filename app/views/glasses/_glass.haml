@@ -6,4 +6,4 @@
 
   - if current_user&.admin?
     .actions.center
-      = link_to 'Change image', glass_images_path(glass_id: glass.id), class: 'btn btn-primary center'
+      = link_to 'Change image', glass_images_path(glass_id: glass.id, type: 'Glass'), class: 'btn btn-primary center'
