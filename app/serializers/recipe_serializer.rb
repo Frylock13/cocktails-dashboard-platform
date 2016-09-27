@@ -7,6 +7,10 @@ class RecipeSerializer < ActiveModel::Serializer
   has_many :recipe_ingredients
 
   def thumb_url
-    "http:" + ActionController::Base.helpers.image_url(object.image.url)
+    if object.image.present?
+      "http:" + ActionController::Base.helpers.image_url(object.image.url)
+    else
+      "http://huge-it.com/wp-content/plugins/lightbox/images/No-image-found.jpg"
+    end
   end
 end
