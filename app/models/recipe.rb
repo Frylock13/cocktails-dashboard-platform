@@ -7,7 +7,7 @@ class Recipe < ApplicationRecord
   has_attached_file :image, styles: { thumb: "64x64>" }, default_url: "missings/recipe.png"
   validates_attachment_content_type :image, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
-  validates :name, presence: true, length: { maximum: 100 }
+  validates :name, :glass_id, :category_id, :type, presence: true, length: { maximum: 100 }
 
   has_many :likes, dependent: :destroy
   has_many :dislikes, dependent: :destroy

@@ -1,10 +1,8 @@
 class RecipeSerializer < ActiveModel::Serializer
   
-  attributes :id, :name, :description, :thumb_url
+  attributes :id, :name, :description, :thumb_url, :glass_name
 
-  belongs_to :category
-
-  has_many :recipe_ingredients
+   has_many :ingredients
 
   def thumb_url
     if object.image.present?
@@ -12,5 +10,13 @@ class RecipeSerializer < ActiveModel::Serializer
     else
       "http://huge-it.com/wp-content/plugins/lightbox/images/No-image-found.jpg"
     end
+  end
+
+  def glass_name
+    object.glass.name
+  end
+
+  class IngredientSerializer < ActiveModel::Serializer
+    attributes :name
   end
 end
