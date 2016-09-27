@@ -8,7 +8,7 @@ class Api::V1::CategoriesController < ApplicationController
   end
 
   def show
-    category = Category.friendly.find(params[:id])
+    category = Category.find(params[:id])
     respond_with category
   end
 end
