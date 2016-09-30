@@ -1,0 +1,5 @@
+deployment:
+  prod:
+    branch: master
+    heroku:
+      appname: still-taiga-64406
