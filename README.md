@@ -1,4 +1,5 @@
 ## README
+Cocktails API
 
 ### Seed
 `rake db:schema:load`
