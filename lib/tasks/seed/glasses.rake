@@ -2,7 +2,7 @@ namespace :seed do
   desc "Seed glasses"
   task glasses: :environment do
 
-    Glass.destroy_all
+    Glass.delete_all
 
     seed_file = Rails.root.join('db', 'seeds', 'ymls', 'glasses.yml')
     config = YAML::load_file(seed_file)

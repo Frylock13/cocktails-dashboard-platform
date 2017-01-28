@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
 
-
-gem 'rails', '5.0.0.1'
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'sprockets-rails', github: 'rails/sprockets-rails'
 gem 'pg'
 gem 'puma'
@@ -31,6 +29,7 @@ gem 'figaro'
 gem 'colorize'
 gem 'httparty'
 gem 'responders'
+gem 'figaro'
 
 group :test do
   gem 'rspec-rails'
@@ -52,4 +51,4 @@ group :development do
   gem 'rack-mini-profiler'
 end
 
-#gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

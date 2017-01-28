@@ -2,7 +2,7 @@ namespace :seed do
   desc "Seed categories"
   task categories: :environment do
 
-    Category.destroy_all
+    Category.delete_all
 
     seed_file = Rails.root.join('db', 'seeds', 'ymls', 'categories.yml')
     config = YAML::load_file(seed_file)
