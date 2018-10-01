@@ -19,3 +19,4 @@
 # Ignore application configuration
 /config/application.yml
 /lib/tasks/recipes_parsing.rake
+.idea/workspace.xml
